@@ -1,2 +1,2 @@
 # tps_laboratorio_II
-Division 2A turno mañana
+Francisco Allende Division 2A turno mañana 2022
