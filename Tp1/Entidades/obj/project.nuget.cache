@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "mecJSieFbOucE8Vnuqx9h5B2hZmAUvhugH3h54m3THVaH8G8+IafMV8ul9HEArl5SPdK467isQql9FvYTFBVNQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Tp1\\Entidades\\Entidades.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
