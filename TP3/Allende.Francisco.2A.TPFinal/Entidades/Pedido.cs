@@ -129,6 +129,12 @@ namespace Entidades
             }
         }
 
+
+        /// <summary>
+        /// Segun tipo y cantidad, retorna la cantidad por escrito
+        /// <paramref name="tipo"/>
+        /// <paramref name="cantidad"/>
+        /// </summary>
         public string RetornarCantidadEscrito(string tipo, double cantidad)
         {
             if (tipo == "Helado" || tipo == "Yogur")

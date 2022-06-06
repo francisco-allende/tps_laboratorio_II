@@ -22,6 +22,9 @@ namespace Entidades
             Serializador.rutaBase = info.FullName;
         }
 
+        /// <summary>
+        /// Serializador generico para XML
+        /// </summary>
         public static void SerializarXML<T>(string nombreArchivo, List<T> lista)
             where T : class
         {
@@ -42,6 +45,9 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Deserealizador generico para xml
+        /// </summary>
         public static List<T> DeserializarXML<T>(string nombreArchivo, List<T> lista)
             where T : class
         {
@@ -55,6 +61,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Serializador dinamico para json
+        /// </summary>
         public static void SerializadorJson<T>(string nombreFile, List<T> lista)
             where T : class
         {

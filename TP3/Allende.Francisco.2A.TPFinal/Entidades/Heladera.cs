@@ -28,6 +28,9 @@ namespace Entidades
             this.ListaGenerica = new List<T>();
         }
 
+        /// <summary>
+        /// Suma un elemento a la heladera
+        /// </summary>
         public static bool operator +(Heladera<T> heladera, T postre)
         {
             if (heladera.capacidadMaxima > heladera.ListaGenerica.Count)
@@ -41,6 +44,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Retorna el indice del objeto postre enviado
+        /// </summary>
         private int GetIndice(T postre)
         {
             for (int i = 0; i < this.ListaGenerica.Count; i++)
@@ -54,6 +60,9 @@ namespace Entidades
             return -1;
         }
 
+        /// <summary>
+        /// Remueve un postre de la heladera
+        /// </summary>
         public static bool operator -(Heladera<T> heladera, T postre)
         {
             int indiceTRemover = heladera.GetIndice(postre);
@@ -68,7 +77,9 @@ namespace Entidades
             }
         }
 
-        //Para usarlos, instancio una heladera, y ahi si agrego el postre
+        /// <summary>
+        /// Llama al la sobrecarga del + para añadir a la lista
+        /// </summary>
         public bool Agregar(T postre)
         {
             if (postre != null)
@@ -81,6 +92,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Llama a la sobrecarga del - para quitar de la lista
+        /// </summary>
         public bool Remover(T postre)
         {
             if(postre != null)
@@ -91,21 +105,6 @@ namespace Entidades
             {
                 throw new NullReferenceException("No se encontro postre con ese Id");
             }
-        }
-
-        //no hay aca un stack overflow?
-        public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine($"Capacidad máxima: {this.capacidadMaxima}");
-
-            foreach (T item in this.ListaGenerica)
-            {
-                sb.AppendLine(item.ToString());
-            }
-
-            return sb.ToString();
         }
     }
 }

@@ -24,6 +24,9 @@ namespace TPFinal_Heladeria_Froddo
         private bool esPrimerPedido;
         private int constanteIdCliente;
 
+        /// <summary>
+        /// Recibe atributos del form padre, guardando asi todos los cambios aun sin serializar
+        /// </summary>
         public TomarPedido(Form_MenuPrincipal formPrincipal, Heladera<Postre> heladeraStock, Ventas ventas, List<Mesa> listaMesas, Cafeteria cafeteria)
         {
             InitializeComponent();
@@ -34,6 +37,9 @@ namespace TPFinal_Heladeria_Froddo
             this.listaMesas = listaMesas;
         }
 
+        /// <summary>
+        /// Carga o instancia todos sus atirbutos 
+        /// </summary>
         private void Vender_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
@@ -408,7 +414,9 @@ namespace TPFinal_Heladeria_Froddo
         #endregion
 
         #region IBaseDeDatos
-
+        /// <summary>
+        /// Serializa las ventas a un xml, json y txt
+        /// </summary>
         public void SaveAndExport()
         {
             if (this.ventas.ListaVentas != null)
@@ -422,7 +430,9 @@ namespace TPFinal_Heladeria_Froddo
         #endregion
 
         #region ITabla
-
+        /// <summary>
+        /// Carga la tabla con los valores correspondientes
+        /// </summary>
         public void PrintTabla()
         {
             int index = 0;
@@ -451,6 +461,9 @@ namespace TPFinal_Heladeria_Froddo
             this.esPrimerPedido = false;
         }
 
+        /// <summary>
+        /// Ya confirmada la compra, se añade a la tabla el cliente con su pedido
+        /// </summary>
         public void AddToTabla()
         {
             //Restar stock
@@ -538,6 +551,9 @@ namespace TPFinal_Heladeria_Froddo
             this.BorrarDatos(true);
         }
 
+        /// <summary>
+        /// Se remueve un cliente de la tabla
+        /// </summary>
         public void RemoveFromTabla()
         {
             string input = this.GenerateMessageBox("Remover Pedido", "Ingrese el id del pedido a remover");
@@ -562,12 +578,18 @@ namespace TPFinal_Heladeria_Froddo
             }
         }
 
+        /// <summary>
+        /// Refresca la tabla al vaciarla y actualizarla con la nueva data
+        /// </summary>
         public void RefreshTabla()
         {
             this.ClearTabla();
             this.PrintTabla();
         }
 
+        /// <summary>
+        /// Limpia la tabla
+        /// </summary>
         public void ClearTabla()
         {
             dataGrid_Pedidos.Rows.Clear();
@@ -575,7 +597,11 @@ namespace TPFinal_Heladeria_Froddo
         #endregion
 
         #region Metodos
-
+        /// <summary>
+        /// Guarda el nombre del cliente. 
+        /// Un cliente por vez se atiende, por lo que despuesd e la primera no se ejecuta hasta que
+        /// se confirme la compra o se cierre el programa
+        /// </summary>
         private void SaveClientName()
         {
             string name = textBox_NombreCliente.Text;
@@ -596,6 +622,9 @@ namespace TPFinal_Heladeria_Froddo
             this.pedido.ClienteQuePide.Nombre = name;
         }
 
+        /// <summary>
+        /// Permite elegir el tipo, helado, cafe o yogur
+        /// </summary>
         private void ChooseType()
         {
             string chosenType = String.Empty;
@@ -622,6 +651,9 @@ namespace TPFinal_Heladeria_Froddo
             textBox_Tipo.Text = this.pedido.Tipo;
         }
 
+        /// <summary>
+        /// Permite elegir el sabor del tipo elegido
+        /// </summary>
         private void ChooseSabor()
         {
             int id = -1;
@@ -642,6 +674,10 @@ namespace TPFinal_Heladeria_Froddo
             }
         }
 
+        /// <summary>
+        /// Permite elegir la cantidad del producto a consumir, cuanto se consume
+        /// Segun tipo, sabor (para el cafe) y cantidad, se calcula e imprime el precio del pedido
+        /// </summary>
         private void ChooseCantidad()
         {
             string input = String.Empty;
@@ -680,6 +716,11 @@ namespace TPFinal_Heladeria_Froddo
             textBox_Precio.Text = this.pedido.Precio.ToString();
         }
 
+        /// <summary>
+        /// Muestra opciones de sabor
+        /// Carga el sabor
+        /// Carga la cantidad, y la guarda en formato escrito
+        /// </summary>
         private string MostrarYCargar(string tipo, int id, string queHacer, double cantidadACargar)
         {
             StringBuilder sb = new StringBuilder();
@@ -811,6 +852,10 @@ namespace TPFinal_Heladeria_Froddo
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Dos opciones, o se come en el local (elige mesa) 
+        /// O se lo lleva a su casa (no elige mesa)
+        /// </summary>
         private void PlaceToConsume()
         {
             if (radioBtn_ParaLlevar.Checked)
@@ -827,6 +872,12 @@ namespace TPFinal_Heladeria_Froddo
             }
         }
 
+        /// <summary>
+        /// Solo es necesario si se come en el local.
+        /// Pide una mesa a ocupar
+        /// Valida que la mesa este libre
+        /// Si esta libre, la carga a la lista de mesas como ocupada. Sino, se vuelve a intentar
+        /// </summary>
         private void ChooseTable()
         {
             if (this.pedido.ClienteQuePide.DondeConsume == "Consume aca")
@@ -880,6 +931,11 @@ namespace TPFinal_Heladeria_Froddo
             }
         }
 
+        /// <summary>
+        /// Cobra el total al imrpimr una factura, 
+        /// agregar a la lista de ventas confirmadas al pedido
+        /// Y resetea todo para un nuevo cliente
+        /// </summary>
         private void Cobrar()
         {
             this.SaveAndExport();
@@ -894,6 +950,10 @@ namespace TPFinal_Heladeria_Froddo
             this.ClearTabla();
         }
 
+        /// <summary>
+        /// Borra los datos del form 
+        /// y opcionalmente, instancia un cliente y pedido nuevo 
+        /// </summary>
         private void BorrarDatos(bool soloBorrarCamposForm)
         {
             //Vacio todos los campos 
@@ -915,6 +975,9 @@ namespace TPFinal_Heladeria_Froddo
             }
         }
 
+        /// <summary>
+        /// Imprime en el lsit box los datos de la facturacion ya cobrado el/los pedido/s
+        /// </summary>
         private void PrintFactura()
         {
             foreach (Pedido item in ventas.ListaVentas)
@@ -927,7 +990,9 @@ namespace TPFinal_Heladeria_Froddo
             }
         }
 
-        //Sobrecarga
+        /// <summary>
+        /// Sobrecargo dos messagebox con formato distinto
+        /// </summary>
         private DialogResult GenerateMessageBox(string texto, string titulo, MessageBoxButtons btn, MessageBoxIcon icono)
         {
             return MessageBox.Show(texto, titulo, btn, icono);
@@ -938,6 +1003,12 @@ namespace TPFinal_Heladeria_Froddo
             return Microsoft.VisualBasic.Interaction.InputBox(texto, titulo);
         }
 
+        /// <summary>
+        /// Si no se cobro aun, y hay un pedido
+        /// y se clickea en salir, pregunta si antes no quiere cobrar
+        /// Si dice que si, cobra y cierra
+        /// Sino, solo cierra sin cobrar
+        /// </summary>
         private void PreguntarAntesDeCerrar()
         {
             DialogResult respuesta = this.GenerateMessageBox("¿Seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

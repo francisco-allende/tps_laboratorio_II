@@ -67,10 +67,12 @@ namespace TPFinal_Heladeria_Froddo
             this.PreguntarAntesDeCerrar();
         }
 
-        #endregion 
+        #endregion
 
         #region metodos
-
+        /// <summary>
+        /// Genera un nuevo form segun el parametro
+        /// </summary>
         private void GenerateSecondaryForm(string tipoForm)
         {
             //meter try catch
@@ -90,6 +92,10 @@ namespace TPFinal_Heladeria_Froddo
             }
         }
 
+        /// <summary>
+        /// Si el archivo existe, los desearilza y carga a su respectiva lista desde un xml
+        /// Sino, lo hardcodea y lo carga hardcodeado
+        /// </summary>
         private void FillList()
         {
             string directoryPath = Serializador.RutaBase;
@@ -132,7 +138,9 @@ namespace TPFinal_Heladeria_Froddo
         }
 
         #region Hardcodeo listas si no existen
-
+        /// <summary>
+        /// Hardcodea una lista caso de que no se haye el archivo en el escritorio
+        /// </summary>
         private void HardcodearListaHelados()
         {
             Helado helado0 = new(0, 25, ETipoPostre.Helado, ESaboresHelado.Chocolate);
@@ -167,7 +175,9 @@ namespace TPFinal_Heladeria_Froddo
             heladeraStock.ListaGenerica.Add(yogur3);
             heladeraStock.ListaGenerica.Add(yogur4);
         }
-
+        /// <summary>
+        /// Hardcodea una lista caso de que no se haye el archivo en el escritorio
+        /// </summary>
         private void HardcodearListaCafes()
         {
             Cafe cafe1 = new Cafe(15, ESaborCafe.SinLeche, 200);
@@ -178,7 +188,9 @@ namespace TPFinal_Heladeria_Froddo
             this.cafeteria.ListaCafes.Add(cafe2);
             this.cafeteria.ListaCafes.Add(cafe3);
         }
-
+        /// <summary>
+        /// Hardcodea una lista caso de que no se haye el archivo en el escritorio
+        /// </summary>
         private void HardcodearListaVentas()
         {
             List<int> listaPedidosCliente1 = new List<int>();
@@ -197,7 +209,9 @@ namespace TPFinal_Heladeria_Froddo
             this.ventas.ListaVentas.Add(pedido1);
             this.ventas.ListaVentas.Add(pedido2);
         }
-
+        /// <summary>
+        /// Hardcodea una lista caso de que no se haye el archivo en el escritorio
+        /// </summary>
         private void HardcodearListaMesas()
         {
             Mesa mesa1 = new Mesa(1, true);
@@ -236,7 +250,9 @@ namespace TPFinal_Heladeria_Froddo
         #endregion
 
         #region IBaseDeDatos
-
+        /// <summary>
+        /// Exporta las listas en formato txt, json y xml
+        /// </summary>
         public void SaveAndExport()
         {
             if (heladeraStock.ListaGenerica != null)

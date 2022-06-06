@@ -189,7 +189,9 @@ namespace TPFinal_Heladeria_Froddo
         #endregion
 
         #region ITabla
-
+        /// <summary>
+        /// Printea la tabla con los valores correspondientes
+        /// </summary>
         public void PrintTabla()
         {
             int index = 0;
@@ -212,6 +214,9 @@ namespace TPFinal_Heladeria_Froddo
             textBox_CapacidadDisponible.Text = (heladera.CapacidadMaxima - heladera.CapacidadOcupada).ToString();
         }
 
+        /// <summary>
+        /// Añade a la tabla un elemento previamente removido, no la cantidad.
+        /// </summary>
         public void AddToTabla()
         {
             string input = this.GenerateMessageBox("Añadir producto", "Ingrese el id del producto a añadir");
@@ -239,6 +244,10 @@ namespace TPFinal_Heladeria_Froddo
             }
         }
 
+        /// <summary>
+        /// Remueve de la tabla un elemento. Luego se puede volver a traer con el Add
+        /// al guardarlo en una lsita de removidos, nunca pierdo la informacion
+        /// </summary>
         public void RemoveFromTabla()
         {
             string input = this.GenerateMessageBox("Remover producto", "Ingrese el id del producto a remover");
@@ -266,12 +275,18 @@ namespace TPFinal_Heladeria_Froddo
             }
         }
 
+        /// <summary>
+        /// Refresca la tabla al limpiarla y cargarla de nuevo con los valores actualziados
+        /// </summary>
         public void RefreshTabla()
         {
             this.ClearTabla();
             this.PrintTabla();
         }
 
+        /// <summary>
+        /// Limpia la tabla 
+        /// </summary>
         public void ClearTabla()
         {
             datagrid_Stock.Rows.Clear();
@@ -281,6 +296,9 @@ namespace TPFinal_Heladeria_Froddo
 
         #region IBaseDeDatos
 
+        /// <summary>
+        /// Serialzia las listas usadas a XML, Json y Txt
+        /// </summary>
         public void SaveAndExport()
         {
             if (heladera.ListaGenerica != null)
@@ -297,11 +315,13 @@ namespace TPFinal_Heladeria_Froddo
                 GestionarArchivos.Escribir("Lista_Removidos_Heladera.txt", this.removidos.ListaGenerica);
             }
         }
-        
+
         #endregion
 
         #region Metodos
-
+        /// <summary>
+        /// Permite editar la cantidad de stock
+        /// </summary>
         public void EditCantidad()
         {
             string input = this.GenerateMessageBox("Editar producto", "Ingrese el id del producto a editar");
@@ -345,7 +365,9 @@ namespace TPFinal_Heladeria_Froddo
             }
         }
 
-        //Sobrecarga
+        /// <summary>
+        /// Sobrecargo dos modelos distintos de message box
+        /// </summary>
         private DialogResult GenerateMessageBox(string texto, string titulo, MessageBoxButtons btn, MessageBoxIcon icono)
         {
             return MessageBox.Show(texto, titulo, btn, icono);
@@ -371,6 +393,9 @@ namespace TPFinal_Heladeria_Froddo
             }
         }
 
+        /// <summary>
+        /// Pregunta con message box si antes se desean guardar los cambios
+        /// </summary>
         private void PreguntarGuardarCambios()
         {
             DialogResult respuesta = this.GenerateMessageBox("¿Desea Guardar los Cambios antes de Salir?", "Guardar Cambios",
