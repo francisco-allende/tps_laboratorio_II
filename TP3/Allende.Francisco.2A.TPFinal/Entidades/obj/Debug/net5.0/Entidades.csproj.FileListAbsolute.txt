@@ -1,0 +1,44 @@
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Tp3\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Entidades.deps.json
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Tp3\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Entidades.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Tp3\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\ref\Entidades.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Tp3\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Entidades.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Tp3\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Tp3\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Tp3\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Tp3\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Tp3\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Tp3\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Tp3\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\ref\Entidades.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Tp3\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Entidades.deps.json
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Entidades.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\ref\Entidades.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Entidades.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\ref\Entidades.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Biblio_Excepciones.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.csproj.CopyComplete
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Entidades.deps.json
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Entidades.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\ref\Entidades.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Entidades.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Biblio_Excepciones.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.csproj.CopyComplete
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\ref\Entidades.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\obj\Debug\net5.0\Entidades.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Biblio_Interfaces.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Entidades\bin\Debug\net5.0\Biblio_Interfaces.pdb

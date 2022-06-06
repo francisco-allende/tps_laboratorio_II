@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "89c4vHueY/cbRMXw+sN07/vnKoXeaZyizCXxLa3ew2zLuDmNX+nd5QcfE3VtKQcfuLbfGKh/zJg3ODUM1H9Q1w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP3 POSTA\\Allende.Francisco.2A.TPFinal\\TPFinal_Heladeria_Froddo\\TPFinal_Heladeria_Froddo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
