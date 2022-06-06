@@ -14,7 +14,7 @@ using Biblio_Interfaces;
 
 namespace TPFinal_Heladeria_Froddo
 {
-    public partial class Stock : Form, ITabla
+    public partial class Stock : Form, ITabla, IBaseDeDatos
     {
         private Heladera<Postre> heladera;
         private Heladera<Postre> removidos;
@@ -281,7 +281,7 @@ namespace TPFinal_Heladeria_Froddo
 
         #region IBaseDeDatos
 
-        private void SaveAndExport()
+        public void SaveAndExport()
         {
             if (heladera.ListaGenerica != null)
             {
@@ -302,7 +302,7 @@ namespace TPFinal_Heladeria_Froddo
 
         #region Metodos
 
-        private void EditCantidad()
+        public void EditCantidad()
         {
             string input = this.GenerateMessageBox("Editar producto", "Ingrese el id del producto a editar");
             int id = -1;

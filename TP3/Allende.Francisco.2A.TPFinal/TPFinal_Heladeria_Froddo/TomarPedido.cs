@@ -21,7 +21,6 @@ namespace TPFinal_Heladeria_Froddo
         private Ventas ventas;
         private Pedido pedido;
         private Cafeteria cafeteria;
-        private List<int> listaIdsPedidos;
         private bool esPrimerPedido;
         private int constanteIdCliente;
 

@@ -62,16 +62,6 @@ namespace TPFinal_Heladeria_Froddo
             this.GenerateSecondaryForm("Stock");
         }
 
-        private void btn_AdminVentas_Click(object sender, EventArgs e)
-        {
-            this.GenerateSecondaryForm("AdminVentas");
-        }
-
-        private void button_fromMesas_Click(object sender, EventArgs e)
-        {
-            this.GenerateSecondaryForm("Mesas");
-        }
-
         private void button_Salir_Click(object sender, EventArgs e)
         {
             this.PreguntarAntesDeCerrar();
@@ -96,18 +86,6 @@ namespace TPFinal_Heladeria_Froddo
                     Stock formStock = new Stock(this, this.heladeraStock, this.removidosStock);
                     this.Hide();
                     formStock.Show();
-                    break;
-
-                case "AdminVentas":
-                    AdminVentas formAdminVentas = new AdminVentas();
-                    this.Hide();
-                    formAdminVentas.Show();
-                    break;
-
-                case "Mesas":
-                    Mesas formMesas = new Mesas();
-                    this.Hide();
-                    formMesas.Show();
                     break;
             }
         }

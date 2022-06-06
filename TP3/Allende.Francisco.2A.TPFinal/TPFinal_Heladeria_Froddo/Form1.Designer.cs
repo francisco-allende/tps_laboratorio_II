@@ -31,12 +31,10 @@ namespace TPFinal_Heladeria_Froddo
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_MenuPrincipal));
             this.label_Menu = new System.Windows.Forms.Label();
-            this.button_fromMesas = new System.Windows.Forms.Button();
             this.label_HeadLine = new System.Windows.Forms.Label();
             this.button_Salir = new System.Windows.Forms.Button();
             this.btn_AdminStock = new System.Windows.Forms.Button();
             this.btn_TomarPedido = new System.Windows.Forms.Button();
-            this.btn_AdminVentas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_Menu
@@ -50,18 +48,6 @@ namespace TPFinal_Heladeria_Froddo
             this.label_Menu.Size = new System.Drawing.Size(306, 41);
             this.label_Menu.TabIndex = 0;
             this.label_Menu.Text = "Página principal";
-            // 
-            // button_fromMesas
-            // 
-            this.button_fromMesas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button_fromMesas.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_fromMesas.Location = new System.Drawing.Point(158, 352);
-            this.button_fromMesas.Name = "button_fromMesas";
-            this.button_fromMesas.Size = new System.Drawing.Size(155, 47);
-            this.button_fromMesas.TabIndex = 4;
-            this.button_fromMesas.Text = "Mesas";
-            this.button_fromMesas.UseVisualStyleBackColor = false;
-            this.button_fromMesas.Click += new System.EventHandler(this.button_fromMesas_Click);
             // 
             // label_HeadLine
             // 
@@ -79,9 +65,9 @@ namespace TPFinal_Heladeria_Froddo
             // 
             this.button_Salir.BackColor = System.Drawing.Color.Firebrick;
             this.button_Salir.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Salir.Location = new System.Drawing.Point(158, 405);
+            this.button_Salir.Location = new System.Drawing.Point(158, 392);
             this.button_Salir.Name = "button_Salir";
-            this.button_Salir.Size = new System.Drawing.Size(155, 49);
+            this.button_Salir.Size = new System.Drawing.Size(155, 62);
             this.button_Salir.TabIndex = 5;
             this.button_Salir.Text = "Salir";
             this.button_Salir.UseVisualStyleBackColor = false;
@@ -91,9 +77,9 @@ namespace TPFinal_Heladeria_Froddo
             // 
             this.btn_AdminStock.BackColor = System.Drawing.Color.SlateBlue;
             this.btn_AdminStock.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_AdminStock.Location = new System.Drawing.Point(158, 238);
+            this.btn_AdminStock.Location = new System.Drawing.Point(158, 285);
             this.btn_AdminStock.Name = "btn_AdminStock";
-            this.btn_AdminStock.Size = new System.Drawing.Size(155, 52);
+            this.btn_AdminStock.Size = new System.Drawing.Size(155, 65);
             this.btn_AdminStock.TabIndex = 2;
             this.btn_AdminStock.Text = "Stock";
             this.btn_AdminStock.UseVisualStyleBackColor = false;
@@ -111,30 +97,16 @@ namespace TPFinal_Heladeria_Froddo
             this.btn_TomarPedido.UseVisualStyleBackColor = false;
             this.btn_TomarPedido.Click += new System.EventHandler(this.btn_TomarPedido_Click);
             // 
-            // btn_AdminVentas
-            // 
-            this.btn_AdminVentas.BackColor = System.Drawing.Color.Yellow;
-            this.btn_AdminVentas.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_AdminVentas.Location = new System.Drawing.Point(158, 296);
-            this.btn_AdminVentas.Name = "btn_AdminVentas";
-            this.btn_AdminVentas.Size = new System.Drawing.Size(155, 50);
-            this.btn_AdminVentas.TabIndex = 3;
-            this.btn_AdminVentas.Text = "Ventas";
-            this.btn_AdminVentas.UseVisualStyleBackColor = false;
-            this.btn_AdminVentas.Click += new System.EventHandler(this.btn_AdminVentas_Click);
-            // 
             // Form_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(494, 466);
-            this.Controls.Add(this.btn_AdminVentas);
             this.Controls.Add(this.btn_TomarPedido);
             this.Controls.Add(this.btn_AdminStock);
             this.Controls.Add(this.button_Salir);
             this.Controls.Add(this.label_HeadLine);
-            this.Controls.Add(this.button_fromMesas);
             this.Controls.Add(this.label_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_MenuPrincipal";
@@ -149,12 +121,10 @@ namespace TPFinal_Heladeria_Froddo
         #endregion
 
         private System.Windows.Forms.Label label_Menu;
-        private System.Windows.Forms.Button button_fromMesas;
         private System.Windows.Forms.Label label_HeadLine;
         private System.Windows.Forms.Button button_Salir;
         private System.Windows.Forms.Button btn_AdminStock;
         private System.Windows.Forms.Button btn_TomarPedido;
-        private System.Windows.Forms.Button btn_AdminVentas;
     }
 }
 
