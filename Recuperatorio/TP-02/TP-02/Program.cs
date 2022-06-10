@@ -45,9 +45,9 @@ namespace TP_02_2018
             Console.ReadKey();
             Console.Clear();
 
-            // Quito 2 items y muestro
+            // Quito 2 items y muestro. Linea de codigo del recuperatorio que suplanta la anterior.
             taller -= c1;
-            taller -= new Ciclomotor(Vehiculo.EMarca.Honda, "ASD913", ConsoleColor.Red);
+            taller -= new Ciclomotor(Vehiculo.EMarca.HarleyDavidson, "LEM666", ConsoleColor.Red);
 
             Console.WriteLine(taller.ToString());
             Console.WriteLine("<-----------PRESIONE UNA TECLA PARA CONTINUAR----------->");
