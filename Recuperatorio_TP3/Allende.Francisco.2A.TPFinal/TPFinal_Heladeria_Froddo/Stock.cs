@@ -238,9 +238,9 @@ namespace TPFinal_Heladeria_Froddo
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception("No se encontró el postre.\n" + ex.Message);
+                throw new Exception("No se encontró el postre");
             }
         }
 
@@ -303,16 +303,12 @@ namespace TPFinal_Heladeria_Froddo
         {
             if (heladera.ListaGenerica != null)
             {
-                Serializador.SerializarXML("Lista_Stock_Heladera.xml", this.heladera.ListaGenerica);
-                Serializador.SerializadorJson("Lista_Stock_Heladera.json", this.heladera.ListaGenerica);
-                GestionarArchivos.Escribir("Lista_Stock_Heladera.txt", this.heladera.ListaGenerica);
+                Serializador.SerializarXML("Lista_Stock_Heladera.json", this.heladera.ListaGenerica);
             }
 
             if (removidos.ListaGenerica != null)
             {
-                Serializador.SerializarXML("Lista_Removidos_Heladera.xml", this.removidos.ListaGenerica);
-                Serializador.SerializadorJson("Lista_Removidos_Heladera.json", this.removidos.ListaGenerica);
-                GestionarArchivos.Escribir("Lista_Removidos_Heladera.txt", this.removidos.ListaGenerica);
+                Serializador.SerializarXML("Lista_Removidos_Heladera.json", this.removidos.ListaGenerica);
             }
         }
 
@@ -348,7 +344,7 @@ namespace TPFinal_Heladeria_Froddo
             }
             catch (Exception)
             {
-                throw new Exception("No se encontró el postre.\n");
+                throw new Exception();
             }
 
             input = this.GenerateMessageBox("Editar producto", $"{postreEditar.ToString()}\nIngrese la nueva cantidad de Stock (en kilos): ");

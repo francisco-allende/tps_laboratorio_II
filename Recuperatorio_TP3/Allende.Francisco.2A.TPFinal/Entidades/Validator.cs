@@ -34,7 +34,7 @@ namespace Entidades
             }
             if (num < 0)
             {
-                throw new NumeroNegativoException("No se pueden ingresar numeros negativos");
+                throw new NumeroNegativoException();
             }
 
             return num;
@@ -48,7 +48,7 @@ namespace Entidades
             }
             if (num <= 0)
             {
-                throw new NumeroNegativoException("No se pueden ingresar numeros negativos ni ingresar cero");
+                throw new NumeroNegativoException();
             }
 
             return num;

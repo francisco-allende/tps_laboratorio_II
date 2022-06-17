@@ -21,7 +21,6 @@ namespace TPFinal_Heladeria_Froddo
         private Heladera<Postre> removidosStock;
         private Cafeteria cafeteria;
         private Ventas ventas;
-        private List<Mesa> listaMesas;
 
         public Form_MenuPrincipal()
         {
@@ -40,7 +39,6 @@ namespace TPFinal_Heladeria_Froddo
                 this.cafeteria.ListaCafes = new List<Cafe>();
                 this.ventas = new Ventas();
                 this.ventas.ListaVentas =  new List<Pedido>();
-                this.listaMesas = new List<Mesa>();
                 this.FillList();
             }
             catch (Exception)
@@ -79,7 +77,7 @@ namespace TPFinal_Heladeria_Froddo
             switch (tipoForm)
             {
                 case "TomarPedido":
-                    TomarPedido formVender = new TomarPedido(this, this.heladeraStock, this.ventas, this.listaMesas, this.cafeteria);
+                    TomarPedido formVender = new TomarPedido(this, this.heladeraStock, this.ventas, this.cafeteria);
                     this.Hide();
                     formVender.Show();
                     break;
@@ -100,25 +98,22 @@ namespace TPFinal_Heladeria_Froddo
         private void FillList()
         {
             string directoryPath = Serializador.RutaBase;
-            string nameFileStock = "Lista_Stock_Heladera.xml";
-            string nameFileRemovidos = "Lista_Removidos_Heladera.xml";
+            string nameFileStock = "Lista_Stock_Heladera.json";
+            string nameFileRemovidos = "Lista_Removidos_Heladera.json";
             string nameFileStockCafeteria = "Lista_Stock_Cafeteria.json";
             string nameFileFacturas = "Facturas.xml";
-            string nameFileMesas = "Lista_Mesas.json";
 
             try
             {
                 if (File.Exists(directoryPath + nameFileStock) 
                     && File.Exists(directoryPath + nameFileRemovidos)
                     && File.Exists(directoryPath + nameFileStockCafeteria)
-                    && File.Exists(directoryPath + nameFileFacturas)
-                    && File.Exists(directoryPath + nameFileMesas))
+                    && File.Exists(directoryPath + nameFileFacturas))
                 {
-                    this.heladeraStock.ListaGenerica = Serializador.DeserializarXML(nameFileStock, this.heladeraStock.ListaGenerica);
-                    this.removidosStock.ListaGenerica = Serializador.DeserializarXML(nameFileRemovidos, this.removidosStock.ListaGenerica);
+                    this.heladeraStock.ListaGenerica = Serializador.DeserealizarJson(nameFileStock, this.heladeraStock.ListaGenerica);
+                    this.removidosStock.ListaGenerica = Serializador.DeserealizarJson(nameFileRemovidos, this.removidosStock.ListaGenerica);
                     this.cafeteria.ListaCafes = Serializador.DeserealizarJson(nameFileStockCafeteria, this.cafeteria.ListaCafes);
                     this.ventas.ListaVentas = Serializador.DeserializarXML(nameFileFacturas, this.ventas.ListaVentas);
-                    this.listaMesas = Serializador.DeserealizarJson(nameFileMesas, this.listaMesas);
                 }
                 else
                 {
@@ -126,7 +121,6 @@ namespace TPFinal_Heladeria_Froddo
                     this.HardcodearListaHelados();
                     this.HardcodearListaCafes();
                     this.HardcodearListaVentas();
-                    this.HardcodearListaMesas();
                     this.SaveAndExport();
                 }
             }
@@ -209,43 +203,6 @@ namespace TPFinal_Heladeria_Froddo
             this.ventas.ListaVentas.Add(pedido1);
             this.ventas.ListaVentas.Add(pedido2);
         }
-        /// <summary>
-        /// Hardcodea una lista caso de que no se haye el archivo en el escritorio
-        /// </summary>
-        private void HardcodearListaMesas()
-        {
-            Mesa mesa1 = new Mesa(1, true);
-            Mesa mesa2 = new Mesa(2, false);
-            Mesa mesa3 = new Mesa(3, false);
-            Mesa mesa4 = new Mesa(4, true);
-            Mesa mesa5 = new Mesa(5, false);
-            Mesa mesa6 = new Mesa(6, false);
-            Mesa mesa7 = new Mesa(7, true);
-            Mesa mesa8 = new Mesa(8, true);
-            Mesa mesa9 = new Mesa(9, true);
-            Mesa mesa10 = new Mesa(10, false);
-            Mesa mesa11 = new Mesa(11, false);
-            Mesa mesa12 = new Mesa(12, true);
-            Mesa mesa13 = new Mesa(13, false);
-            Mesa mesa14 = new Mesa(14, true);
-            Mesa mesa15 = new Mesa(15, true);
-
-            listaMesas.Add(mesa1);
-            listaMesas.Add(mesa2);
-            listaMesas.Add(mesa3);
-            listaMesas.Add(mesa4);
-            listaMesas.Add(mesa5);
-            listaMesas.Add(mesa6);
-            listaMesas.Add(mesa7);
-            listaMesas.Add(mesa8);
-            listaMesas.Add(mesa9);
-            listaMesas.Add(mesa10);
-            listaMesas.Add(mesa11);
-            listaMesas.Add(mesa12);
-            listaMesas.Add(mesa13);
-            listaMesas.Add(mesa14);
-            listaMesas.Add(mesa15);
-        }
 
         #endregion
 
@@ -257,12 +214,12 @@ namespace TPFinal_Heladeria_Froddo
         {
             if (heladeraStock.ListaGenerica != null)
             {
-                Serializador.SerializarXML("Lista_Stock_Heladera.xml", this.heladeraStock.ListaGenerica);
+                Serializador.SerializarXML("Lista_Stock_Heladera.json", this.heladeraStock.ListaGenerica);
             }
 
             if (heladeraStock.ListaGenerica != null)
             {
-                Serializador.SerializarXML("Lista_Removidos_Heladera.xml", this.removidosStock.ListaGenerica);
+                Serializador.SerializarXML("Lista_Removidos_Heladera.json", this.removidosStock.ListaGenerica);
             }
 
             if(this.cafeteria.ListaCafes != null)
@@ -273,11 +230,6 @@ namespace TPFinal_Heladeria_Froddo
             if(this.ventas.ListaVentas != null)
             {
                 Serializador.SerializarXML("Lista_Ventas.xml", this.ventas.ListaVentas);
-            }
-
-            if(this.listaMesas != null)
-            {
-                Serializador.SerializadorJson("Lista_Mesas.json", this.listaMesas);
             }
         }
 

@@ -8,7 +8,7 @@ namespace Biblio_Excepciones
 {
     public class NoEsPrimerPedidoException : Exception
     {
-        public NoEsPrimerPedidoException()
+        public NoEsPrimerPedidoException() : this("Un pedido a la vez para un mismo cliente.\nMismo cliente, no se modifica el nombre")
         {
 
         }

@@ -8,7 +8,7 @@ namespace Biblio_Excepciones
 {
     public class ItemNoSeleccionadoException : Exception
     {
-        public ItemNoSeleccionadoException()
+        public ItemNoSeleccionadoException() : this("Item previo no seleccionado")
         {
 
         }

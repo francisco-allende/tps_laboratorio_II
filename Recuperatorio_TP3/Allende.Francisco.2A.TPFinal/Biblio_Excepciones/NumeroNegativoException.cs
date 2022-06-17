@@ -8,7 +8,7 @@ namespace Biblio_Excepciones
 {
     public class NumeroNegativoException :  Exception
     {
-        public NumeroNegativoException()
+        public NumeroNegativoException():this("No se pueden ingresar ni el cero ni numeros negativos")
         {
 
         }

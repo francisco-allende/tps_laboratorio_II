@@ -27,14 +27,43 @@ namespace TPFinal_Heladeria_Froddo
         /// <summary>
         /// Recibe atributos del form padre, guardando asi todos los cambios aun sin serializar
         /// </summary>
-        public TomarPedido(Form_MenuPrincipal formPrincipal, Heladera<Postre> heladeraStock, Ventas ventas, List<Mesa> listaMesas, Cafeteria cafeteria)
+        public TomarPedido(Form_MenuPrincipal formPrincipal, Heladera<Postre> heladeraStock, Ventas ventas, Cafeteria cafeteria)
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
             this.heladeraStock = heladeraStock;
             this.cafeteria = cafeteria;
             this.ventas = ventas;
-            this.listaMesas = listaMesas;
+            this.listaMesas = new List<Mesa>();
+            this.InicializarListaMesas();
+        }
+
+        /// <summary>
+        /// Llena una lista de 10 mesas libres que se ocupan a medida se toman los pedidos
+        /// </summary>
+        private void InicializarListaMesas()
+        {
+                Mesa mesa1 = new Mesa(1, true);
+                Mesa mesa2 = new Mesa(2, true);
+                Mesa mesa3 = new Mesa(3, true);
+                Mesa mesa4 = new Mesa(4, true);
+                Mesa mesa5 = new Mesa(5, true);
+                Mesa mesa6 = new Mesa(6, true);
+                Mesa mesa7 = new Mesa(7, true);
+                Mesa mesa8 = new Mesa(8, true);
+                Mesa mesa9 = new Mesa(9, true);
+                Mesa mesa10 = new Mesa(10, true);
+
+                this.listaMesas.Add(mesa1);
+                this.listaMesas.Add(mesa2);
+                this.listaMesas.Add(mesa3);
+                this.listaMesas.Add(mesa4);
+                this.listaMesas.Add(mesa5);
+                this.listaMesas.Add(mesa6);
+                this.listaMesas.Add(mesa7);
+                this.listaMesas.Add(mesa8);
+                this.listaMesas.Add(mesa9);
+                this.listaMesas.Add(mesa10);
         }
 
         /// <summary>
@@ -58,7 +87,7 @@ namespace TPFinal_Heladeria_Froddo
             {
                 if (this.pedido.ClienteQuePide.Nombre != null)
                 {
-                    throw new NoEditarElPedidoException("No se puede editar el pedido una vez comenzado. Cancele y vuelva a empezar o siga como está ahora");
+                    throw new NoEditarElPedidoException();
                 }
                 if(this.esPrimerPedido) //Solo accedo una vez. Ya que los pedidos son un pedido a la vez para un solo cliente
                 {
@@ -66,7 +95,7 @@ namespace TPFinal_Heladeria_Froddo
                 }
                 else
                 {
-                    throw new NoEsPrimerPedidoException("Un pedido a la vez para un mismo cliente.\nMismo cliente, no se modifica el nombre");
+                    throw new NoEsPrimerPedidoException();
                 }
             }
             catch(NoEditarElPedidoException ex)
@@ -104,13 +133,13 @@ namespace TPFinal_Heladeria_Froddo
                 {
                     if (this.pedido.ClienteQuePide.Nombre == null || this.pedido.ClienteQuePide.Nombre == String.Empty)
                     {
-                        throw new ItemNoSeleccionadoException("Para comenzar a tomar el pedido debe ingresar el nombre del cliente");
+                        throw new ItemNoSeleccionadoException();
                     }
                 }
             
                 if (this.pedido.Tipo != null)
                 {
-                    throw new NoEditarElPedidoException("No se puede editar el pedido una vez comenzado. Cancele y vuelva a empezar o siga como está ahora");
+                    throw new NoEditarElPedidoException();
                 }
                 this.ChooseType();
             }
@@ -134,7 +163,7 @@ namespace TPFinal_Heladeria_Froddo
             {
                 if (this.pedido.Sabor != null)
                 {
-                    throw new NoEditarElPedidoException("No se puede editar el pedido una vez comenzado. Cancele y vuelva a empezar o siga como está ahora");
+                    throw new NoEditarElPedidoException();
                 }
                 this.ChooseSabor();
             }
@@ -170,11 +199,11 @@ namespace TPFinal_Heladeria_Froddo
             {
                 if (this.pedido.Sabor == null || this.pedido.Sabor == String.Empty)
                 {
-                    throw new ItemNoSeleccionadoException("Antes debe elegir un tipo y sabor");
+                    throw new ItemNoSeleccionadoException();
                 }
                 if (this.pedido.Cantidad != 0)
                 {
-                    throw new NoEditarElPedidoException("No se puede editar el pedido una vez comenzado. Cancele y vuelva a empezar o siga como está ahora");
+                    throw new NoEditarElPedidoException();
                 }
                 this.ChooseCantidad();
             }
@@ -218,15 +247,15 @@ namespace TPFinal_Heladeria_Froddo
             {
                 if (!this.esPrimerPedido)
                 {
-                    throw new NoEsPrimerPedidoException("Mesa ya elegida\nUn mismo cliente no puede tener dos mesas distintas");
+                    throw new NoEsPrimerPedidoException();
                 }
                 if (this.pedido.Cantidad == 0)
                 {
-                    throw new ItemNoSeleccionadoException("Antes debe elegir un tipo, sabor y cantidad");
+                    throw new ItemNoSeleccionadoException();
                 }
                 if(this.pedido.ClienteQuePide.DondeConsume != null)
                 {
-                    throw new NoEditarElPedidoException("No se puede editar el pedido una vez comenzado. Cancele y vuelva a empezar o siga como está ahora");
+                    throw new NoEditarElPedidoException();
                 }
                 this.PlaceToConsume();
             }
@@ -254,15 +283,15 @@ namespace TPFinal_Heladeria_Froddo
             {
                 if(!this.esPrimerPedido)
                 {
-                    throw new NoEsPrimerPedidoException("Mesa ya elegida\nUn mismo cliente no puede tener dos mesas distintas");
+                    throw new NoEsPrimerPedidoException();
                 }
                 if (this.pedido.ClienteQuePide.DondeConsume == null || this.pedido.ClienteQuePide.DondeConsume == String.Empty)
                 {
-                    throw new ItemNoSeleccionadoException("Antes debe elegir un tipo, sabor, cantidad y donde consume");
+                    throw new ItemNoSeleccionadoException();
                 }
                 if (this.pedido.ClienteQuePide.NroMesa != 0)
                 {
-                    throw new NoEditarElPedidoException("No se puede editar el pedido una vez comenzado. Cancele y vuelva a empezar o siga como está ahora");
+                    throw new NoEditarElPedidoException();
                 }
                 this.ChooseTable();
             }
@@ -306,11 +335,11 @@ namespace TPFinal_Heladeria_Froddo
             {
                 if(this.esPrimerPedido && this.pedido.ClienteQuePide.DondeConsume == null)
                 {
-                    throw new ItemNoSeleccionadoException("Antes debe elegir el tipo, sabor, cantidad y lugar a consumir");
+                    throw new ItemNoSeleccionadoException();
                 }
                 if(!this.esPrimerPedido && this.pedido.Cantidad == 0)
                 {
-                    throw new ItemNoSeleccionadoException("Antes debe elegir el tipo, sabor, cantidad");
+                    throw new ItemNoSeleccionadoException();
                 }
                 this.AddToTabla();
 
@@ -489,7 +518,7 @@ namespace TPFinal_Heladeria_Froddo
             }
             else
             {
-                throw new ItemNoEncontradoException("No se pudo encontrar el tipo del producto");
+                throw new ItemNoEncontradoException();
             }
 
             //Asigno Id real del pedido
@@ -572,7 +601,7 @@ namespace TPFinal_Heladeria_Froddo
             }
             if (!encontrado)
             {
-                throw new ItemNoEncontradoException("No se encontro ningún Pedido con ese Id");
+                throw new ItemNoEncontradoException();
             }
         }
 
@@ -606,7 +635,7 @@ namespace TPFinal_Heladeria_Froddo
 
             if(name == String.Empty)
             {
-                throw new ItemNoSeleccionadoException("No se puede dejar este campo vacio");
+                throw new ItemNoSeleccionadoException();
             }
             if(!Validator.NoContieneNumeros(name))
             {
@@ -641,7 +670,7 @@ namespace TPFinal_Heladeria_Froddo
             }
             else
             {
-                throw new ItemNoSeleccionadoException("Error. Ningun item fue seleccionado");
+                throw new ItemNoSeleccionadoException();
             }
 
             //Nunca se va a cargar vacio, ya que antes romperia con la excepcion
@@ -668,7 +697,7 @@ namespace TPFinal_Heladeria_Froddo
 
             if(this.pedido.Sabor == null || this.pedido.Sabor == String.Empty)
             {
-                throw new ItemNoEncontradoException("Id invalido, no coincide con ningun caso segun tipo elegido");
+                throw new ItemNoEncontradoException();
             }
         }
 
@@ -692,7 +721,7 @@ namespace TPFinal_Heladeria_Froddo
             }
             else
             {
-                throw new ItemNoSeleccionadoException("Falto elegir el tipo");
+                throw new ItemNoSeleccionadoException();
             }
 
             cantidadACargar = Validator.NoEsCeroNiCaracter(input, cantidadACargar);
@@ -769,7 +798,7 @@ namespace TPFinal_Heladeria_Froddo
                                     case 1: //en este caso si coincide la ocion con la cantidad
                                         if (cantidadACargar > item.CantidadStock)
                                         {
-                                            throw new SinEspacioEnLaHeladeraExcepcion("No tenemos suficiente stock");
+                                            throw new SinEspacioEnLaHeladeraExcepcion();
                                         }
                                         textBox_CantidadPostre.Text = "Un Kilo";
                                         this.pedido.Cantidad = cantidadACargar;
@@ -779,7 +808,7 @@ namespace TPFinal_Heladeria_Froddo
                                         verdaderaCantidad = 0.5f;
                                         if (verdaderaCantidad > item.CantidadStock)
                                         {
-                                            throw new SinEspacioEnLaHeladeraExcepcion("No tenemos suficiente stock");
+                                            throw new SinEspacioEnLaHeladeraExcepcion();
                                         }
                                         textBox_CantidadPostre.Text = "Un Medio";
                                         this.pedido.Cantidad = verdaderaCantidad;
@@ -789,7 +818,7 @@ namespace TPFinal_Heladeria_Froddo
                                         verdaderaCantidad = 0.25f;
                                         if (verdaderaCantidad > item.CantidadStock)
                                         {
-                                            throw new SinEspacioEnLaHeladeraExcepcion("No tenemos suficiente stock");
+                                            throw new SinEspacioEnLaHeladeraExcepcion();
                                         }
                                         textBox_CantidadPostre.Text = "Un Cuarto";
                                         this.pedido.Cantidad = verdaderaCantidad;
@@ -827,7 +856,7 @@ namespace TPFinal_Heladeria_Froddo
                             {
                                 if (cantidadACargar > item.CantidadStock)
                                 {
-                                    throw new SinEspacioEnLaHeladeraExcepcion($"No tenemos suficiente stock");
+                                    throw new SinEspacioEnLaHeladeraExcepcion();
                                 }
                                 else
                                 {
@@ -844,7 +873,7 @@ namespace TPFinal_Heladeria_Froddo
             }
             else
             {
-                throw new ItemNoSeleccionadoException("Elija antes el tipo");
+                throw new ItemNoSeleccionadoException();
             }
  
             return sb.ToString();
@@ -866,7 +895,7 @@ namespace TPFinal_Heladeria_Froddo
             }
             else
             {
-                throw new ItemNoSeleccionadoException("Error. Item no seleccionado");
+                throw new ItemNoSeleccionadoException();
             }
         }
 
@@ -914,7 +943,7 @@ namespace TPFinal_Heladeria_Froddo
                         }
                         else if (item.Id == mesaElegida && !item.EstaLibre)
                         {
-                            throw new MesaOcupadaException($"La mesa nro {mesaElegida} ya se encuentra ocupada, intenete con una libre");
+                            throw new MesaOcupadaException();
                         }
                     }
 

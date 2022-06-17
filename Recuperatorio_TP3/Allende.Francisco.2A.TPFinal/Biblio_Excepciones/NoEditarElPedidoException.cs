@@ -8,7 +8,7 @@ namespace Biblio_Excepciones
 {
     public class NoEditarElPedidoException : Exception
     {
-        public NoEditarElPedidoException()
+        public NoEditarElPedidoException():this("No edite el pedido en el medio de un proceso de venta. Cancele y vuelva a empezar")
         {
 
         }

@@ -8,7 +8,7 @@ namespace Biblio_Excepciones
 {
     public class MesaOcupadaException :  Exception
     {
-        public MesaOcupadaException()
+        public MesaOcupadaException():this("Mesa ya ocupada")
         {
 
         }

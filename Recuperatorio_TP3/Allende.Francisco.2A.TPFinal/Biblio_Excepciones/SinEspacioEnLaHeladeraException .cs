@@ -8,7 +8,7 @@ namespace Biblio_Excepciones
 {
     public class SinEspacioEnLaHeladeraExcepcion : Exception
     {
-        public SinEspacioEnLaHeladeraExcepcion()
+        public SinEspacioEnLaHeladeraExcepcion():this("No tenemos suficiente stock en la heladera")
         {
 
         }
