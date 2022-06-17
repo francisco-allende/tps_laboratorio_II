@@ -29,6 +29,7 @@ namespace TPFinal_Heladeria_Froddo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_MenuPrincipal));
             this.label_Menu = new System.Windows.Forms.Label();
             this.label_HeadLine = new System.Windows.Forms.Label();
             this.button_Salir = new System.Windows.Forms.Button();
@@ -101,6 +102,7 @@ namespace TPFinal_Heladeria_Froddo
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Orchid;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(494, 466);
             this.Controls.Add(this.btn_TomarPedido);
             this.Controls.Add(this.btn_AdminStock);

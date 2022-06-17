@@ -166,10 +166,11 @@ namespace Entidades
 
             sb.AppendLine("Datos del Pedido: \n");
             sb.AppendLine($" Id: {this.id}\n");
-            sb.AppendLine($", Tipo de producto a consumir: {this.tipo}\n");
-            sb.AppendLine($", Sabor: {this.sabor}\n");
-            sb.AppendLine($", Cantidad: {this.RetornarCantidadEscrito(this.tipo, this.cantidad)}\n");
-            sb.AppendLine($", Precio: ${this.precio}\n");
+            sb.AppendLine($" Tipo de producto a consumir: {this.tipo}\n");
+            sb.AppendLine($" Sabor: {this.sabor}\n");
+            sb.AppendLine($" Cantidad: {this.RetornarCantidadEscrito(this.tipo, this.cantidad)}\n");
+            sb.AppendLine($" Precio: ${this.precio}");
+            sb.AppendLine("**********************\n\n\n");
 
             return sb.ToString();
         }

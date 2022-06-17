@@ -415,15 +415,13 @@ namespace TPFinal_Heladeria_Froddo
 
         #region IBaseDeDatos
         /// <summary>
-        /// Serializa las ventas a un xml, json y txt
+        /// Guarda las facturas de las ventas en un txt
         /// </summary>
         public void SaveAndExport()
         {
             if (this.ventas.ListaVentas != null)
             {
-                Serializador.SerializarXML("Lista_Ventas.xml", this.ventas.ListaVentas);
-                Serializador.SerializadorJson("Lista_Ventas.json", this.ventas.ListaVentas);
-                GestionarArchivos.Escribir("Lista_Ventas.txt", this.ventas.ListaVentas);
+                GestionarArchivos.Escribir("Facturas.txt", this.ventas.ListaVentas);
             }
         }
 
@@ -982,7 +980,7 @@ namespace TPFinal_Heladeria_Froddo
         {
             foreach (Pedido item in ventas.ListaVentas)
             {
-                if(item.ClienteQuePide.Id == this.constanteIdCliente)
+                if (item.ClienteQuePide.Id == this.constanteIdCliente)
                 {
                     listBox_Factura.Items.Add(item.ToString());
                     listBox_Factura.Items.Add(item.ClienteQuePide.ToString());

@@ -87,5 +87,23 @@ namespace Entidades
                 }
             }
         }
+
+        public static List<T> DeserealizarJson<T>(string nombreFile, List<T> lista)
+        {
+            string ruta = Serializador.rutaBase + nombreFile;
+
+            try
+            {
+                using (StreamReader sr = new StreamReader(ruta))
+                {
+                    string miJson = sr.ReadToEnd();
+                    return JsonSerializer.Deserialize<List<T>>(miJson);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("no se pudo pasar a json", ex);
+            }
+        }
     }
 }

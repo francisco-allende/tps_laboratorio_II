@@ -94,6 +94,7 @@ namespace TPFinal_Heladeria_Froddo
 
         /// <summary>
         /// Si el archivo existe, los desearilza y carga a su respectiva lista desde un xml
+        /// Mesas y cafe no usan herencia, por ende, van con json
         /// Sino, lo hardcodea y lo carga hardcodeado
         /// </summary>
         private void FillList()
@@ -101,24 +102,23 @@ namespace TPFinal_Heladeria_Froddo
             string directoryPath = Serializador.RutaBase;
             string nameFileStock = "Lista_Stock_Heladera.xml";
             string nameFileRemovidos = "Lista_Removidos_Heladera.xml";
-            string nameFileStockCafeteria = "Lista_Stock_Cafeteria.xml";
-            string nameFileVentas = "Lista_Ventas.xml";
-            string nameFileMesas = "Lista_Mesas.xml";
+            string nameFileStockCafeteria = "Lista_Stock_Cafeteria.json";
+            string nameFileFacturas = "Facturas.xml";
+            string nameFileMesas = "Lista_Mesas.json";
 
             try
             {
                 if (File.Exists(directoryPath + nameFileStock) 
                     && File.Exists(directoryPath + nameFileRemovidos)
                     && File.Exists(directoryPath + nameFileStockCafeteria)
-                    && File.Exists(directoryPath + nameFileVentas)
+                    && File.Exists(directoryPath + nameFileFacturas)
                     && File.Exists(directoryPath + nameFileMesas))
                 {
-                    //No deserealizo en json porque ya lo hago con XML y no tiene sentido hacerlo dos veces
                     this.heladeraStock.ListaGenerica = Serializador.DeserializarXML(nameFileStock, this.heladeraStock.ListaGenerica);
                     this.removidosStock.ListaGenerica = Serializador.DeserializarXML(nameFileRemovidos, this.removidosStock.ListaGenerica);
-                    this.cafeteria.ListaCafes = Serializador.DeserializarXML(nameFileStockCafeteria, this.cafeteria.ListaCafes);
-                    this.ventas.ListaVentas = Serializador.DeserializarXML(nameFileVentas, this.ventas.ListaVentas);
-                    this.listaMesas = Serializador.DeserializarXML(nameFileMesas, this.listaMesas);
+                    this.cafeteria.ListaCafes = Serializador.DeserealizarJson(nameFileStockCafeteria, this.cafeteria.ListaCafes);
+                    this.ventas.ListaVentas = Serializador.DeserializarXML(nameFileFacturas, this.ventas.ListaVentas);
+                    this.listaMesas = Serializador.DeserealizarJson(nameFileMesas, this.listaMesas);
                 }
                 else
                 {
@@ -258,36 +258,26 @@ namespace TPFinal_Heladeria_Froddo
             if (heladeraStock.ListaGenerica != null)
             {
                 Serializador.SerializarXML("Lista_Stock_Heladera.xml", this.heladeraStock.ListaGenerica);
-                Serializador.SerializadorJson("Lista_Stock_Heladera.json", this.heladeraStock.ListaGenerica);
-                GestionarArchivos.Escribir("Lista_Stock_Heladera.txt", this.heladeraStock.ListaGenerica);
             }
 
             if (heladeraStock.ListaGenerica != null)
             {
                 Serializador.SerializarXML("Lista_Removidos_Heladera.xml", this.removidosStock.ListaGenerica);
-                Serializador.SerializadorJson("Lista_Removidos_Heladera.json", this.removidosStock.ListaGenerica);
-                GestionarArchivos.Escribir("Lista_Removidos_Heladera.txt", this.removidosStock.ListaGenerica);
             }
 
             if(this.cafeteria.ListaCafes != null)
             {
-                Serializador.SerializarXML("Lista_Stock_Cafeteria.xml", this.cafeteria.ListaCafes);
                 Serializador.SerializadorJson("Lista_Stock_Cafeteria.json", this.cafeteria.ListaCafes);
-                GestionarArchivos.Escribir("Lista_Stock_Cafeteria.txt", this.cafeteria.ListaCafes);
             }
 
             if(this.ventas.ListaVentas != null)
             {
                 Serializador.SerializarXML("Lista_Ventas.xml", this.ventas.ListaVentas);
-                Serializador.SerializadorJson("Lista_Ventas.json", this.ventas.ListaVentas);
-                GestionarArchivos.Escribir("Lista_Ventas.txt", this.ventas.ListaVentas);
             }
 
             if(this.listaMesas != null)
             {
-                Serializador.SerializarXML("Lista_Mesas.xml", this.listaMesas);
                 Serializador.SerializadorJson("Lista_Mesas.json", this.listaMesas);
-                GestionarArchivos.Escribir("Lista_Mesas.txt", this.listaMesas);
             }
         }
 

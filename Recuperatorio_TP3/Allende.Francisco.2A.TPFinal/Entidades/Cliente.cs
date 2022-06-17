@@ -52,17 +52,17 @@ namespace Entidades
 
             sb.AppendLine("Datos del Cliente: \n");
             sb.AppendLine($"Id: {this.Id}\n");
-            sb.AppendLine($", Nombre: {this.Nombre}\n");
-            sb.AppendLine($", Donde consume: {this.DondeConsume}\n");
+            sb.AppendLine($" Nombre: {this.Nombre}\n");
+            sb.AppendLine($" Donde consume: {this.DondeConsume}\n");
             if(this.nroMesa == 0)
             {
-                sb.AppendLine($", Número de mesa: -\n");
+                sb.AppendLine($" Número de mesa: -\n");
             }
             else
             {
-                sb.AppendLine($", Número de mesa: {this.nroMesa}\n");
+                sb.AppendLine($" Número de mesa: {this.nroMesa}\n");
             }
-            sb.AppendLine($", Total a pagar (Tomar el ultimo): ${this.TotalAPagar}\n");
+            sb.AppendLine($" Total a pagar (Tomar el ultimo): ${this.TotalAPagar}\n");
 
             return sb.ToString();
         }
