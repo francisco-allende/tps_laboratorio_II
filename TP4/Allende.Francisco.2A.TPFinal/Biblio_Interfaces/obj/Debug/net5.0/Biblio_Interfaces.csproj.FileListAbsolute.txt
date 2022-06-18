@@ -1,0 +1,24 @@
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\bin\Debug\net5.0\Biblio_Interfaces.deps.json
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\bin\Debug\net5.0\Biblio_Interfaces.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\bin\Debug\net5.0\ref\Biblio_Interfaces.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\bin\Debug\net5.0\Biblio_Interfaces.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\ref\Biblio_Interfaces.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\bin\Debug\net5.0\Biblio_Interfaces.deps.json
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\bin\Debug\net5.0\Biblio_Interfaces.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\bin\Debug\net5.0\ref\Biblio_Interfaces.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\bin\Debug\net5.0\Biblio_Interfaces.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\ref\Biblio_Interfaces.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Interfaces\obj\Debug\net5.0\Biblio_Interfaces.pdb

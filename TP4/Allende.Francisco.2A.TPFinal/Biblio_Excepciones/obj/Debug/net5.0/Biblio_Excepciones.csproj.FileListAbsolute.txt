@@ -1,0 +1,48 @@
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\Biblio_Excepciones.deps.json
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\ref\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\Biblio_Excepciones.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\ref\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\tp3 backup\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\Biblio_Excepciones.deps.json
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\ref\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\Biblio_Excepciones.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\ref\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP3 POSTA\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Recuperatorio TP3\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\Biblio_Excepciones.deps.json
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Recuperatorio TP3\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Recuperatorio TP3\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\ref\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Recuperatorio TP3\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\Biblio_Excepciones.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Recuperatorio TP3\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Recuperatorio TP3\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Recuperatorio TP3\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Recuperatorio TP3\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Recuperatorio TP3\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Recuperatorio TP3\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Recuperatorio TP3\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\ref\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\Recuperatorio TP3\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\Biblio_Excepciones.deps.json
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\ref\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\bin\Debug\net5.0\Biblio_Excepciones.pdb
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\ref\Biblio_Excepciones.dll
+C:\Users\Usuario\Desktop\UTN tecnicatura\2do cuatri\Labo 2\Tps\TP4\Allende.Francisco.2A.TPFinal\Biblio_Excepciones\obj\Debug\net5.0\Biblio_Excepciones.pdb
