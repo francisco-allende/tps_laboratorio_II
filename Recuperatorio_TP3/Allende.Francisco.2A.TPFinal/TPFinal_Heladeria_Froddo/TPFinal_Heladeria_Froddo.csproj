@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Biblio_Excepciones\Biblio_Excepciones.csproj" />
     <ProjectReference Include="..\Biblio_Interfaces\Biblio_Interfaces.csproj" />
+    <ProjectReference Include="..\DAO_y_Archivos\DAO_y_Archivos.csproj" />
     <ProjectReference Include="..\Entidades\Entidades.csproj" />
   </ItemGroup>
 

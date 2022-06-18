@@ -69,7 +69,7 @@ namespace TPFinal_Heladeria_Froddo
                 if (this.ValidarCamposLlenos())
                 {
                     if(Validator.NoContieneNumeros(textBox_Nombre.Text) 
-                        && Validator.NoEsNegativoNiCaracter(textBox_DNI.Text))
+                        && int.TryParse(textBox_DNI.Text, out int num))
                     {
                         if(textBox_Nombre.Text.Length < 51 || textBox_Direccion.Text.Length < 101)
                         {
@@ -86,7 +86,6 @@ namespace TPFinal_Heladeria_Froddo
                                         this.ventas.ListaVentas.Add(pedido);
                                         this.formPadre.pedido = pedido;
                                         DialogResult = DialogResult.OK;
-                                        //this.Hide();
                                     }
                                     else
                                     {

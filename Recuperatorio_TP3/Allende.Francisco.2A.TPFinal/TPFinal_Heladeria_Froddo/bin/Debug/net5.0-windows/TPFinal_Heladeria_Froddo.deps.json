@@ -10,6 +10,7 @@
         "dependencies": {
           "Biblio_Excepciones": "1.0.0",
           "Biblio_Interfaces": "1.0.0",
+          "DAO_y_Archivos": "1.0.0",
           "Entidades": "1.0.0"
         },
         "runtime": {
@@ -24,6 +25,11 @@
       "Biblio_Interfaces/1.0.0": {
         "runtime": {
           "Biblio_Interfaces.dll": {}
+        }
+      },
+      "DAO_y_Archivos/1.0.0": {
+        "runtime": {
+          "DAO_y_Archivos.dll": {}
         }
       },
       "Entidades/1.0.0": {
@@ -49,6 +55,11 @@
       "sha512": ""
     },
     "Biblio_Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DAO_y_Archivos/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

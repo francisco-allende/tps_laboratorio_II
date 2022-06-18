@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj",
         "projectName": "Biblio_Excepciones",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

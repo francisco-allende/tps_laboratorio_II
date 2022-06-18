@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblio_Excepciones", "Biblio_Excepciones\Biblio_Excepciones.csproj", "{3A7D3DCA-7AC5-420B-90FA-C18E0DFB9682}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblio_Interfaces", "Biblio_Interfaces\Biblio_Interfaces.csproj", "{9D0B906D-8CA3-4DF4-95AF-C6EB037BA946}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblio_Interfaces", "Biblio_Interfaces\Biblio_Interfaces.csproj", "{9D0B906D-8CA3-4DF4-95AF-C6EB037BA946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{23550A22-2E2E-4D1F-9B5C-9441D40566A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing", "Testing\Testing.csproj", "{23550A22-2E2E-4D1F-9B5C-9441D40566A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO_y_Archivos", "DAO_y_Archivos\DAO_y_Archivos.csproj", "{91837C75-1DEE-42F9-B861-2B2D5CC1AE8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{23550A22-2E2E-4D1F-9B5C-9441D40566A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23550A22-2E2E-4D1F-9B5C-9441D40566A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23550A22-2E2E-4D1F-9B5C-9441D40566A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91837C75-1DEE-42F9-B861-2B2D5CC1AE8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91837C75-1DEE-42F9-B861-2B2D5CC1AE8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91837C75-1DEE-42F9-B861-2B2D5CC1AE8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91837C75-1DEE-42F9-B861-2B2D5CC1AE8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

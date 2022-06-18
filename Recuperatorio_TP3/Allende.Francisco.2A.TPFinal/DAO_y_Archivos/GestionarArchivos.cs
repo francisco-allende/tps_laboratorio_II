@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
+using System.IO; 
 
-namespace Entidades
+namespace DAO_y_Archivos
 {
     public class GestionarArchivos
     {

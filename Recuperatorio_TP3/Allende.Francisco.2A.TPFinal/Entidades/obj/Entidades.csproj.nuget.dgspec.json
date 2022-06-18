@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj",
         "projectName": "Biblio_Excepciones",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj",
         "projectName": "Biblio_Interfaces",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -120,14 +120,14 @@
         }
       }
     },
-    "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -148,11 +148,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj": {
-                "projectPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj"
+              "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj"
               },
-              "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj": {
-                "projectPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\Recuperatorio TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj"
+              "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\Desktop\\UTN tecnicatura\\2do cuatri\\Labo 2\\Tps\\TP4\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj"
               }
             }
           }
