@@ -89,6 +89,7 @@ namespace Entidades
         }
 
         public static List<T> DeserealizarJson<T>(string nombreFile, List<T> lista)
+            where T : class
         {
             string ruta = Serializador.rutaBase + nombreFile;
 
@@ -102,7 +103,7 @@ namespace Entidades
             }
             catch (Exception ex)
             {
-                throw new Exception("no se pudo pasar a json", ex);
+                throw new Exception("No se pudo pasar a json " + ex.Message);
             }
         }
     }

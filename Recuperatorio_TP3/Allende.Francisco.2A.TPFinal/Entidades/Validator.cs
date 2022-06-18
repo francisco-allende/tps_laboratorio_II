@@ -26,6 +26,20 @@ namespace Entidades
             return true;
         }
 
+        public static bool NoEsNegativoNiCaracter(string input)
+        {
+            if (!int.TryParse(input, out int num))
+            {
+                throw new FormatException("Error. No se ingreso un caracter numérico");
+            }
+            if (num < 0)
+            {
+                throw new NumeroNegativoException();
+            }
+
+            return true;
+        }
+
         public static int NoEsNegativoNiCaracter(string input, int num)
         {
             if (!int.TryParse(input, out num))
@@ -52,6 +66,44 @@ namespace Entidades
             }
 
             return num;
+        }
+
+        public static bool ValidateSabor(string tipo, string sabor)
+        {
+            if(tipo == "Yogur")
+            {
+                if(sabor != "Natural" && sabor != "Frutilla" && sabor != "Durazno" && sabor != "Vainilla")
+                {
+                    return false;
+                }
+            }
+            if(tipo == "Helado")
+            {
+                if(sabor == "Natural" || sabor == "Frutilla" || sabor == "Durazno")
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public static bool HayStock(List<Postre> listaStock, Pedido pedido)
+        {
+            foreach (Postre item in listaStock)
+            {
+                if (item.Sabor == pedido.Sabor)
+                {
+                    if (item.CantidadStock > pedido.Cantidad)
+                    {
+                        //Resto stock
+                        item.CantidadStock = item.CantidadStock - pedido.Cantidad;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }

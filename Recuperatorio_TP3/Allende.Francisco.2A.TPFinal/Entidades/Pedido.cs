@@ -49,114 +49,75 @@ namespace Entidades
             return id;
         }
 
-        private double SumarIva(double retornoPrecio)
+        private static double SumarIva(double retornoPrecio)
         {
             double recargoIva = retornoPrecio * 0.21;
             return retornoPrecio + recargoIva;
         }
 
-        public static double CalcularPrecio(Pedido pedido)
+        public static double CalcularPrecio(string tipo, double cantidad)
         {
             double precio = 0;
 
-            switch(pedido.tipo)
+            if (tipo == "Helado")
             {
-                case "Helado":
-                    switch(pedido.cantidad) //1 = 1kilo, 0.5 = un medio, 0.25 = un cuarto
-                    {
-                        case 1:
-                            precio = pedido.SumarIva(800);
-                            break;
+                switch (cantidad) //1 = 1kilo, 0.5 = un medio, 0.25 = un cuarto
+                {
+                    case 1:
+                        precio = Pedido.SumarIva(800);
+                        break;
 
-                        case 0.5:
-                            precio = pedido.SumarIva(500);
-                            break;
+                    case 0.5:
+                        precio = Pedido.SumarIva(500);
+                        break;
 
-                        case 0.25:
-                            precio = pedido.SumarIva(300);
-                            break;
-                    }
-                    break;
+                    case 0.25:
+                        precio = Pedido.SumarIva(300);
+                        break;
+                }
+            }
+            else if (tipo == "Yogur")
+            {
+                switch (cantidad)
+                {
+                    case 1:
+                        precio = Pedido.SumarIva(600);
+                        break;
 
-                case "Yogur":
-                    switch (pedido.cantidad)
-                    {
-                        case 1:
-                            precio = pedido.SumarIva(600);
-                            break;
+                    case 0.5:
+                        precio = Pedido.SumarIva(400);
+                        break;
 
-                        case 0.5:
-                            precio = pedido.SumarIva(400);
-                            break;
-
-                        case 0.25:
-                            precio = pedido.SumarIva(250);
-                            break;
-                    }
-                    break;
-
-                case "Cafe":
-                    switch(pedido.sabor)
-                    {
-                        case "SinLeche":
-                            precio = pedido.SumarIva(pedido.cantidad * 120);
-                            break;
-
-                        case "ConLeche":
-                            precio = pedido.SumarIva(pedido.cantidad * 140);
-                            break;
-
-                        case "ConCrema":
-                            precio = pedido.SumarIva(pedido.cantidad * 170);
-                            break;
-                    }
-                    
-                    break;
+                    case 0.25:
+                        precio = Pedido.SumarIva(250);
+                        break;
+                }
             }
 
             return precio;
         }
-
-        public string RetornarNroMesa(int nroMesa)
-        {
-            if (nroMesa != 0)
-            {
-                return nroMesa.ToString();
-            }
-            else
-            {
-                return "-";
-            }
-        }
-
 
         /// <summary>
         /// Segun tipo y cantidad, retorna la cantidad por escrito
         /// <paramref name="tipo"/>
         /// <paramref name="cantidad"/>
         /// </summary>
-        public string RetornarCantidadEscrito(string tipo, double cantidad)
+        public string RetornarCantidadEscrito(double cantidad)
         {
-            if (tipo == "Helado" || tipo == "Yogur")
+            switch (cantidad)
             {
-                switch (cantidad)
-                {
-                    case 1:
-                        return "Un Kilo (1)";
+                case 1:
+                    return "Un Kilo (1)";
 
-                    case 0.5:
-                        return "Un Medio (1/2)";
+                case 0.5:
+                    return "Un Medio (1/2)";
 
-                    case 0.25:
-                        return "Un Cuarto (1/4)";
+                case 0.25:
+                    return "Un Cuarto (1/4)";
 
-                    default:
-                        return cantidad.ToString();
-                }
-            }
-            else
-            {
-                return cantidad.ToString();
+                default:
+                    return cantidad.ToString();
+
             }
         }
 
@@ -168,11 +129,26 @@ namespace Entidades
             sb.AppendLine($" Id: {this.id}\n");
             sb.AppendLine($" Tipo de producto a consumir: {this.tipo}\n");
             sb.AppendLine($" Sabor: {this.sabor}\n");
-            sb.AppendLine($" Cantidad: {this.RetornarCantidadEscrito(this.tipo, this.cantidad)}\n");
+            sb.AppendLine($" Cantidad: {this.RetornarCantidadEscrito(this.cantidad)}\n");
             sb.AppendLine($" Precio: ${this.precio}");
             sb.AppendLine("**********************\n\n\n");
 
             return sb.ToString();
+        }
+
+        public double CalcularTotal(List<Pedido> lista, Pedido pedido)
+        {
+            double total = 0;
+
+            foreach (Pedido item in lista)
+            {
+                if(pedido.ClienteQuePide.Dni == item.ClienteQuePide.Dni)
+                {
+                    total += item.precio;
+                }
+            }
+
+            return total;
         }
     }
 }

@@ -17,54 +17,20 @@ namespace TPFinal_Heladeria_Froddo
     {
         private Form_MenuPrincipal formPrincipal;
         private Heladera<Postre> heladeraStock;
-        private List<Mesa> listaMesas;
         private Ventas ventas;
-        private Pedido pedido;
-        private Cafeteria cafeteria;
-        private bool esPrimerPedido;
-        private int constanteIdCliente;
+        public Pedido pedido;
 
         /// <summary>
         /// Recibe atributos del form padre, guardando asi todos los cambios aun sin serializar
         /// </summary>
-        public TomarPedido(Form_MenuPrincipal formPrincipal, Heladera<Postre> heladeraStock, Ventas ventas, Cafeteria cafeteria)
+        public TomarPedido(Form_MenuPrincipal formPrincipal, Heladera<Postre> heladeraStock, Ventas ventas)
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
             this.heladeraStock = heladeraStock;
-            this.cafeteria = cafeteria;
             this.ventas = ventas;
-            this.listaMesas = new List<Mesa>();
-            this.InicializarListaMesas();
         }
 
-        /// <summary>
-        /// Llena una lista de 10 mesas libres que se ocupan a medida se toman los pedidos
-        /// </summary>
-        private void InicializarListaMesas()
-        {
-                Mesa mesa1 = new Mesa(1, true);
-                Mesa mesa2 = new Mesa(2, true);
-                Mesa mesa3 = new Mesa(3, true);
-                Mesa mesa4 = new Mesa(4, true);
-                Mesa mesa5 = new Mesa(5, true);
-                Mesa mesa6 = new Mesa(6, true);
-                Mesa mesa7 = new Mesa(7, true);
-                Mesa mesa8 = new Mesa(8, true);
-                Mesa mesa9 = new Mesa(9, true);
-                Mesa mesa10 = new Mesa(10, true);
-
-                this.listaMesas.Add(mesa1);
-                this.listaMesas.Add(mesa2);
-                this.listaMesas.Add(mesa3);
-                this.listaMesas.Add(mesa4);
-                this.listaMesas.Add(mesa5);
-                this.listaMesas.Add(mesa6);
-                this.listaMesas.Add(mesa7);
-                this.listaMesas.Add(mesa8);
-                this.listaMesas.Add(mesa9);
-                this.listaMesas.Add(mesa10);
-        }
 
         /// <summary>
         /// Carga o instancia todos sus atirbutos 
@@ -74,289 +40,25 @@ namespace TPFinal_Heladeria_Froddo
             this.ControlBox = false;
             this.pedido = new Pedido(); //instancio primero el pedido, sino su cliente es null
             this.pedido.ClienteQuePide = new Cliente();
-            this.pedido.ClienteQuePide.IdPedido = new List<int>();
-            this.esPrimerPedido = true;
-            this.constanteIdCliente = 0;
         }
 
         #region Eventos
 
-        private void btn_NombreCliente_Click(object sender, EventArgs e)
+        private void btn_AgregarPedido_Click(object sender, EventArgs e)
         {
             try
             {
-                if (this.pedido.ClienteQuePide.Nombre != null)
-                {
-                    throw new NoEditarElPedidoException();
-                }
-                if(this.esPrimerPedido) //Solo accedo una vez. Ya que los pedidos son un pedido a la vez para un solo cliente
-                {
-                    this.SaveClientName();
-                }
-                else
-                {
-                    throw new NoEsPrimerPedidoException();
-                }
-            }
-            catch(NoEditarElPedidoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(NoEsPrimerPedidoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(ItemNoSeleccionadoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(FormatException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(IndexOutOfRangeException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Sucedio un error inesperado ", ex.Message);
-            }
-          
-        }
+                AddPedido frm = new AddPedido(this.heladeraStock, this.ventas, this);
 
-        private void btn_ChooseType_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if(this.esPrimerPedido) //Si no es el primer pedido, no le pido el nombre, no quiero que se modifique
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    if (this.pedido.ClienteQuePide.Nombre == null || this.pedido.ClienteQuePide.Nombre == String.Empty)
-                    {
-                        throw new ItemNoSeleccionadoException();
-                    }
+                    frm.Hide();
+                    this.AddToTabla();
                 }
-            
-                if (this.pedido.Tipo != null)
-                {
-                    throw new NoEditarElPedidoException();
-                }
-                this.ChooseType();
-            }
-            catch(NoEditarElPedidoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(ItemNoSeleccionadoException ex)
-            {
-                MessageBox.Show(ex.Message);
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error mientras se elegia el producto a vender");
-            }
-        }
-
-        private void btn_ChooseSabor_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (this.pedido.Sabor != null)
-                {
-                    throw new NoEditarElPedidoException();
-                }
-                this.ChooseSabor();
-            }
-            catch (NoEditarElPedidoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (ItemNoSeleccionadoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (NumeroNegativoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (ItemNoEncontradoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Sucedio un error al querer seleccionar el sabor");
-            }
-        }
-
-        private void btn_ChooseCantidad_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (this.pedido.Sabor == null || this.pedido.Sabor == String.Empty)
-                {
-                    throw new ItemNoSeleccionadoException();
-                }
-                if (this.pedido.Cantidad != 0)
-                {
-                    throw new NoEditarElPedidoException();
-                }
-                this.ChooseCantidad();
-            }
-            catch(NoEditarElPedidoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(ItemNoSeleccionadoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(FormatException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(NumeroNegativoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (ItemNoEncontradoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(IndexOutOfRangeException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(SinEspacioEnLaHeladeraExcepcion ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Sucedio un error inesperado");
-            }
-        }
-
-        private void btn_PlaceToConsume_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!this.esPrimerPedido)
-                {
-                    throw new NoEsPrimerPedidoException();
-                }
-                if (this.pedido.Cantidad == 0)
-                {
-                    throw new ItemNoSeleccionadoException();
-                }
-                if(this.pedido.ClienteQuePide.DondeConsume != null)
-                {
-                    throw new NoEditarElPedidoException();
-                }
-                this.PlaceToConsume();
-            }
-            catch(NoEditarElPedidoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (NoEsPrimerPedidoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (ItemNoSeleccionadoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(Exception)
-            {
-                MessageBox.Show("Sucedio un error inesperado");
-            }
-        }
-
-        private void btn_ChooseTable_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if(!this.esPrimerPedido)
-                {
-                    throw new NoEsPrimerPedidoException();
-                }
-                if (this.pedido.ClienteQuePide.DondeConsume == null || this.pedido.ClienteQuePide.DondeConsume == String.Empty)
-                {
-                    throw new ItemNoSeleccionadoException();
-                }
-                if (this.pedido.ClienteQuePide.NroMesa != 0)
-                {
-                    throw new NoEditarElPedidoException();
-                }
-                this.ChooseTable();
-            }
-            catch(ItemNoSeleccionadoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(NoEditarElPedidoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (NoEsPrimerPedidoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (MesaOcupadaException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(ItemNoEncontradoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(FormatException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(NumeroNegativoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Sucedió un error inesperado");
-            }
-        }
-
-        private void btn_Confirmar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if(this.esPrimerPedido && this.pedido.ClienteQuePide.DondeConsume == null)
-                {
-                    throw new ItemNoSeleccionadoException();
-                }
-                if(!this.esPrimerPedido && this.pedido.Cantidad == 0)
-                {
-                    throw new ItemNoSeleccionadoException();
-                }
-                this.AddToTabla();
-
-                //instancio de nuevo si es el segundo pedido o mas
-                if (!this.esPrimerPedido)
-                {
-                    this.pedido = new Pedido();
-                    this.pedido.ClienteQuePide = new Cliente();
-                }
-            }
-            catch(ItemNoSeleccionadoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Sucedio un error al querer confirmar el pedido");
+                MessageBox.Show("Sucedio un error inesperado al querer agregar un pedido");
             }
         }
 
@@ -384,36 +86,19 @@ namespace TPFinal_Heladeria_Froddo
             }
         }
 
-        private void btn_Cancel_Click(object sender, EventArgs e)
-        {
-            DialogResult respuesta = this.GenerateMessageBox("¿Seguro de querer Cancelar el pedido?\nEl proceso de venta de este pedido volvera a comnezar",
-                "Cancelar Pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            try
-            {
-                if (respuesta == DialogResult.Yes)
-                {
-                    this.BorrarDatos(false);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Sucedio un error inesperado al intentar cancelar el pedido");
-            }
-        }
-
         private void btn_Cobrar_Click(object sender, EventArgs e)
         {
             try
             {
                 this.Cobrar();
+                textBox_Total.Text = String.Empty;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
+        
         private void btn_Volver_Click(object sender, EventArgs e)
         {
             try
@@ -441,16 +126,29 @@ namespace TPFinal_Heladeria_Froddo
         }
 
         #endregion
-
+        
         #region IBaseDeDatos
         /// <summary>
         /// Guarda las facturas de las ventas en un txt
         /// </summary>
+        
         public void SaveAndExport()
         {
             if (this.ventas.ListaVentas != null)
             {
-                GestionarArchivos.Escribir("Facturas.txt", this.ventas.ListaVentas);
+                Serializador.SerializarXML("Lista_Ventas.xml", this.ventas.ListaVentas);
+
+                List<Pedido> factura = new List<Pedido>();
+
+                foreach (Pedido item in this.ventas.ListaVentas)
+                {
+                    if(this.pedido.ClienteQuePide.Dni == item.ClienteQuePide.Dni)
+                    {
+                        factura.Add(item);
+                    }
+                }
+
+                GestionarArchivos.Escribir("Facturas.txt", factura);
             }
         }
 
@@ -466,26 +164,22 @@ namespace TPFinal_Heladeria_Froddo
 
             foreach (Pedido item in this.ventas.ListaVentas)
             {
-                //Valido Id o muestra todos los pedidos y no solo los de este cliente
-                if (item.ClienteQuePide.Id == this.constanteIdCliente)
+                if(item.ClienteQuePide.Dni == this.pedido.ClienteQuePide.Dni)
                 {
                     dataGrid_Pedidos.Rows.Add();
-                    dataGrid_Pedidos.Rows[index].Cells["IdCliente"].Value = item.ClienteQuePide.Id;
                     dataGrid_Pedidos.Rows[index].Cells["IdPedido"].Value = item.Id;
                     dataGrid_Pedidos.Rows[index].Cells["NombreCliente"].Value = item.ClienteQuePide.Nombre;
+                    dataGrid_Pedidos.Rows[index].Cells["DNI"].Value = item.ClienteQuePide.Dni;
                     dataGrid_Pedidos.Rows[index].Cells["Tipo"].Value = item.Tipo;
                     dataGrid_Pedidos.Rows[index].Cells["Sabor"].Value = item.Sabor;
-                    dataGrid_Pedidos.Rows[index].Cells["Cantidad"].Value = item.RetornarCantidadEscrito(item.Tipo, item.Cantidad);
-                    dataGrid_Pedidos.Rows[index].Cells["Donde_Consume"].Value = item.ClienteQuePide.DondeConsume;
-                    dataGrid_Pedidos.Rows[index].Cells["Nro_Mesa"].Value = item.RetornarNroMesa(item.ClienteQuePide.NroMesa);
+                    dataGrid_Pedidos.Rows[index].Cells["Cantidad"].Value = item.RetornarCantidadEscrito(item.Cantidad);
+                    dataGrid_Pedidos.Rows[index].Cells["Direccion"].Value = item.ClienteQuePide.Direccion;
                     dataGrid_Pedidos.Rows[index].Cells["Precio"].Value = item.Precio;
-                    dataGrid_Pedidos.Rows[index].Cells["Total"].Value = item.ClienteQuePide.TotalAPagar; //falta calcularlo aun
+                    textBox_Total.Text = item.CalcularTotal(this.ventas.ListaVentas, item).ToString();
 
                     index++;
                 }
             }
-
-            this.esPrimerPedido = false;
         }
 
         /// <summary>
@@ -493,79 +187,6 @@ namespace TPFinal_Heladeria_Froddo
         /// </summary>
         public void AddToTabla()
         {
-            //Restar stock
-            if (this.pedido.Tipo == "Helado" || this.pedido.Tipo == "Yogur")
-            {
-                foreach (Postre item in this.heladeraStock.ListaGenerica)
-                {
-                    if (item.Sabor == this.pedido.Sabor) //previamente asignado con cantidad o sabor
-                    {
-                        item.CantidadStock = item.CantidadStock - this.pedido.Cantidad;
-                        break;
-                    }
-                }
-            }
-            else if (this.pedido.Tipo == "Cafe")
-            {
-                foreach (Cafe item in this.cafeteria.ListaCafes)
-                {
-                    if (item.Sabor.ToString() == this.pedido.Sabor)
-                    {
-                        item.CantidadStock = item.CantidadStock - this.pedido.Cantidad;
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                throw new ItemNoEncontradoException();
-            }
-
-            //Asigno Id real del pedido
-            this.pedido.Id = Pedido.AsignarId();
-            this.pedido.ClienteQuePide.IdPedido = new List<int>();
-            this.pedido.ClienteQuePide.IdPedido.Add(this.pedido.Id);
-
-            //Solo le asigno el id si es su primer pedido. Guardo estos datos para asignarselo al proximo pedido
-            if (this.esPrimerPedido)
-            {
-                this.pedido.ClienteQuePide.Id = Cliente.AsignarId();
-                this.pedido.ClienteQuePide.TotalAPagar = this.pedido.Precio;
-                this.constanteIdCliente = this.pedido.ClienteQuePide.Id;
-
-                //Ocupo la mesa si come aca
-                if (this.pedido.ClienteQuePide.DondeConsume == "Consume aca")
-                {
-                    foreach (Mesa item in this.listaMesas)
-                    {
-                        if (this.pedido.ClienteQuePide.NroMesa == item.Id)
-                        {
-                            item.EstaLibre = false;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                this.pedido.ClienteQuePide.Id = this.constanteIdCliente;
-
-                foreach (Pedido item in ventas.ListaVentas)
-                {
-                    if (item.ClienteQuePide.Id == this.constanteIdCliente)
-                    {
-                        this.pedido.ClienteQuePide.Nombre = item.ClienteQuePide.Nombre;
-                        this.pedido.ClienteQuePide.NroMesa = item.ClienteQuePide.NroMesa;
-                        this.pedido.ClienteQuePide.DondeConsume = item.ClienteQuePide.DondeConsume;
-                        this.pedido.ClienteQuePide.TotalAPagar = item.ClienteQuePide.TotalAPagar + this.pedido.Precio;
-                    }
-                }
-            }
-
-        
-            //Sumo a la lista de ventas
-            this.ventas.ListaVentas.Add(this.pedido);
-
-            //sumar total. Sera un atributo de ventas que sume el precio de los pedidos si matchea con el id de cliente
             try
             {
                 this.RefreshTabla();
@@ -574,8 +195,6 @@ namespace TPFinal_Heladeria_Froddo
             {
                 MessageBox.Show("Sucedio un error al querer cargar los datos a la tabla ", ex.Message);
             }
-
-            this.BorrarDatos(true);
         }
 
         /// <summary>
@@ -624,340 +243,8 @@ namespace TPFinal_Heladeria_Froddo
         #endregion
 
         #region Metodos
-        /// <summary>
-        /// Guarda el nombre del cliente. 
-        /// Un cliente por vez se atiende, por lo que despuesd e la primera no se ejecuta hasta que
-        /// se confirme la compra o se cierre el programa
-        /// </summary>
-        private void SaveClientName()
-        {
-            string name = textBox_NombreCliente.Text;
-
-            if(name == String.Empty)
-            {
-                throw new ItemNoSeleccionadoException();
-            }
-            if(!Validator.NoContieneNumeros(name))
-            {
-                throw new FormatException("No se pueden ingresar numeros en este campo");
-            }
-            if(name.Length > 120)
-            {
-                throw new IndexOutOfRangeException("Nombre demasiado largo");
-            }
-
-            this.pedido.ClienteQuePide.Nombre = name;
-        }
-
-        /// <summary>
-        /// Permite elegir el tipo, helado, cafe o yogur
-        /// </summary>
-        private void ChooseType()
-        {
-            string chosenType = String.Empty;
-
-            if (radioBtn_Helado.Checked)
-            {
-                chosenType = "Helado";
-            }
-            else if (radioBtn_Yogur.Checked)
-            {
-                chosenType = "Yogur";
-            }
-            else if (radioBtn_Cafe.Checked)
-            {
-                chosenType = "Cafe";
-            }
-            else
-            {
-                throw new ItemNoSeleccionadoException();
-            }
-
-            //Nunca se va a cargar vacio, ya que antes romperia con la excepcion
-            this.pedido.Tipo = chosenType;
-            textBox_Tipo.Text = this.pedido.Tipo;
-        }
-
-        /// <summary>
-        /// Permite elegir el sabor del tipo elegido
-        /// </summary>
-        private void ChooseSabor()
-        {
-            int id = -1;
-            StringBuilder sb = new StringBuilder();
-            
-            sb.Append(this.MostrarYCargar(this.pedido.Tipo, id, "Mostrar", 0));
-
-            string input = this.GenerateMessageBox("Ver opciones", sb.ToString());
-            id = Validator.NoEsNegativoNiCaracter(input, id);
-      
-
-            //Matcheo cual es y que sea un id valido. Si lo es, cargo
-            this.MostrarYCargar(this.pedido.Tipo, id, "CargarSabor", 0);
-
-            if(this.pedido.Sabor == null || this.pedido.Sabor == String.Empty)
-            {
-                throw new ItemNoEncontradoException();
-            }
-        }
-
-        /// <summary>
-        /// Permite elegir la cantidad del producto a consumir, cuanto se consume
-        /// Segun tipo, sabor (para el cafe) y cantidad, se calcula e imprime el precio del pedido
-        /// </summary>
-        private void ChooseCantidad()
-        {
-            string input = String.Empty;
-            int cantidadACargar = 0;
-
-            
-            if(this.pedido.Tipo == "Helado" || this.pedido.Tipo == "Yogur")
-            {
-                input = this.GenerateMessageBox("Elegir cantidad", "Elija segun Nro de opción:\n1) Un  Kilo\n2) Un Medio\n3) Un Cuarto");    
-            }
-            else if(this.pedido.Tipo == "Cafe")
-            {
-                input = this.GenerateMessageBox("Elegir cantidad", "Elija en unidades. El tamaño es unico y es mediano:");
-            }
-            else
-            {
-                throw new ItemNoSeleccionadoException();
-            }
-
-            cantidadACargar = Validator.NoEsCeroNiCaracter(input, cantidadACargar);
-
-
-            if(this.pedido.Tipo == "Helado" || this.pedido.Tipo == "Yogur")
-            {
-                if(cantidadACargar > 3 || cantidadACargar < 1)
-                {
-                    throw new IndexOutOfRangeException("Opcion inválida. Fuera del rango de opciones");
-                }
-            }
-
-            //matchear por id y si hay stock suficiente, cargo
-            this.MostrarYCargar(this.pedido.Tipo, this.pedido.Id, "CargarCantidad", cantidadACargar);
-
-            //Ya con tipo, sabor en caso del cafe y cantidad, puedo calcular el precio
-            this.pedido.Precio = Pedido.CalcularPrecio(this.pedido);
-            textBox_Precio.Text = this.pedido.Precio.ToString();
-        }
-
-        /// <summary>
-        /// Muestra opciones de sabor
-        /// Carga el sabor
-        /// Carga la cantidad, y la guarda en formato escrito
-        /// </summary>
-        private string MostrarYCargar(string tipo, int id, string queHacer, double cantidadACargar)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            if (tipo == "Helado" || tipo == "Yogur")
-            {
-                foreach (Postre item in heladeraStock.ListaGenerica)
-                {
-                    switch (queHacer)
-                    {
-                        case "Mostrar":
-                            if (tipo == item.Tipo)
-                            {
-                                sb.Append($"*Id: {item.Id} Sabor: {item.Sabor}\n\n");
-                            }
-                            break;
-
-                        case "CargarSabor":
-                            if (tipo == this.pedido.Tipo && id == item.Id)
-                            {
-                                this.pedido.Id = item.Id;
-                                this.pedido.Sabor = item.Sabor.ToString();
-
-                                if (tipo == "Helado")
-                                {
-                                    textBox_SaborHelado.Text = item.Sabor.ToString();
-                                }
-                                else if(tipo == "Yogur")
-                                {
-                                    if(id > 14 || id < 11)
-                                    {
-                                        throw new IndexOutOfRangeException("Opcion inválida. Fuera del rango de opciones");
-                                    }
-                                    else
-                                    {
-                                        textBox_SaborYogur.Text = item.Sabor.ToString();
-                                    }
-                                }
-                            }
-                            break;
-
-                        case "CargarCantidad":
-                            if (tipo == this.pedido.Tipo && id == item.Id)
-                            {
-                                double verdaderaCantidad = 0;
-                                switch(cantidadACargar)
-                                {
-                                    case 1: //en este caso si coincide la ocion con la cantidad
-                                        if (cantidadACargar > item.CantidadStock)
-                                        {
-                                            throw new SinEspacioEnLaHeladeraExcepcion();
-                                        }
-                                        textBox_CantidadPostre.Text = "Un Kilo";
-                                        this.pedido.Cantidad = cantidadACargar;
-                                        break;
-
-                                    case 2:
-                                        verdaderaCantidad = 0.5f;
-                                        if (verdaderaCantidad > item.CantidadStock)
-                                        {
-                                            throw new SinEspacioEnLaHeladeraExcepcion();
-                                        }
-                                        textBox_CantidadPostre.Text = "Un Medio";
-                                        this.pedido.Cantidad = verdaderaCantidad;
-                                        break;
-
-                                    case 3:
-                                        verdaderaCantidad = 0.25f;
-                                        if (verdaderaCantidad > item.CantidadStock)
-                                        {
-                                            throw new SinEspacioEnLaHeladeraExcepcion();
-                                        }
-                                        textBox_CantidadPostre.Text = "Un Cuarto";
-                                        this.pedido.Cantidad = verdaderaCantidad;
-                                        break;
-                                }
-                            }
-                            break;
-
-                        default:
-                            break;
-                    }
-                } 
-            }
-            else if (tipo == "Cafe")
-            {
-                foreach (Cafe item in cafeteria.ListaCafes)
-                {
-                    switch (queHacer)
-                    {
-                        case "Mostrar":          
-                            sb.Append($"*Id: {item.Id} Sabor: {item.Sabor}\n\n");
-                            break;
-
-                        case "CargarSabor":
-                            if (id == item.Id)
-                            {
-                                textBox_SaborCafe.Text = item.Sabor.ToString();
-                                this.pedido.Id = item.Id;
-                                this.pedido.Sabor = item.Sabor.ToString();
-                            }
-                            break;
-
-                        case "CargarCantidad":
-                            if (id == item.Id)
-                            {
-                                if (cantidadACargar > item.CantidadStock)
-                                {
-                                    throw new SinEspacioEnLaHeladeraExcepcion();
-                                }
-                                else
-                                {
-                                    textBox_CantidadCafe.Text = cantidadACargar.ToString();
-                                    this.pedido.Cantidad = cantidadACargar;
-                                }
-                            }
-                            break;
-
-                        default:
-                            break;
-                    }
-                }
-            }
-            else
-            {
-                throw new ItemNoSeleccionadoException();
-            }
- 
-            return sb.ToString();
-        }
-
-        /// <summary>
-        /// Dos opciones, o se come en el local (elige mesa) 
-        /// O se lo lleva a su casa (no elige mesa)
-        /// </summary>
-        private void PlaceToConsume()
-        {
-            if (radioBtn_ParaLlevar.Checked)
-            {
-                this.pedido.ClienteQuePide.DondeConsume = "Se lo lleva";
-            }
-            else if (radioBtn_ComerAca.Checked)
-            {
-                this.pedido.ClienteQuePide.DondeConsume = "Consume aca";
-            }
-            else
-            {
-                throw new ItemNoSeleccionadoException();
-            }
-        }
-
-        /// <summary>
-        /// Solo es necesario si se come en el local.
-        /// Pide una mesa a ocupar
-        /// Valida que la mesa este libre
-        /// Si esta libre, la carga a la lista de mesas como ocupada. Sino, se vuelve a intentar
-        /// </summary>
-        private void ChooseTable()
-        {
-            if (this.pedido.ClienteQuePide.DondeConsume == "Consume aca")
-                {
-                    StringBuilder sb = new StringBuilder();
-                    int mesaElegida = -1;
-                    bool almenosUnaMesaLibre = false;
-                    bool laMesaExiste = false;
-
-                    foreach (Mesa item in this.listaMesas)
-                    {
-                        if (item.EstaLibre)
-                        {
-                            sb.Append($"Mesa nro: {item.Id} Esta Libre\n\n");
-                            almenosUnaMesaLibre = true;
-                        }
-                    }
-
-                    if (!almenosUnaMesaLibre)
-                    {
-                        throw new MesaOcupadaException("No quedaron mesas disponibles, todas se encuentran ocupadas");
-                    }
-
-                    string input = this.GenerateMessageBox("Elegir mesa", sb.ToString());
-                    mesaElegida = Validator.NoEsNegativoNiCaracter(input, mesaElegida);
-
-
-                    foreach (Mesa item in this.listaMesas)
-                    {
-                        if (item.Id == mesaElegida && item.EstaLibre)
-                        {
-                            laMesaExiste = true;
-                            this.pedido.ClienteQuePide.NroMesa = item.Id;
-                            textBox_Mesa.Text = item.Id.ToString();
-                            break;
-                        }
-                        else if (item.Id == mesaElegida && !item.EstaLibre)
-                        {
-                            throw new MesaOcupadaException();
-                        }
-                    }
-
-                    if (!laMesaExiste)
-                    {
-                        throw new ItemNoEncontradoException($"La mesa nro {mesaElegida} no existe");
-                    }
-                }
-            else
-            {
-                throw new ItemNoSeleccionadoException("No se puede elegir una mesa si el cliente se lleva el pedido");
-            }
-        }
-
+        
+       
         /// <summary>
         /// Cobra el total al imrpimr una factura, 
         /// agregar a la lista de ventas confirmadas al pedido
@@ -970,36 +257,9 @@ namespace TPFinal_Heladeria_Froddo
             MessageBox.Show("Venta realizada con exito!\nFactura imprimiendose\nPresione Aceptar para comenzar de nuevo y tomar un nuevo pedido");
 
             //Vacio todo y vuelvo a comenzar
-            this.constanteIdCliente = 0;
-            this.esPrimerPedido = true;
             listBox_Factura.Items.Clear();
-            this.BorrarDatos(false);
+            this.pedido = new Pedido();
             this.ClearTabla();
-        }
-
-        /// <summary>
-        /// Borra los datos del form 
-        /// y opcionalmente, instancia un cliente y pedido nuevo 
-        /// </summary>
-        private void BorrarDatos(bool soloBorrarCamposForm)
-        {
-            //Vacio todos los campos 
-            textBox_NombreCliente.Text = String.Empty;
-            textBox_Tipo.Text = String.Empty;
-            textBox_SaborHelado.Text = String.Empty;
-            textBox_SaborYogur.Text = String.Empty;
-            textBox_SaborCafe.Text = String.Empty;
-            textBox_CantidadCafe.Text = String.Empty;
-            textBox_CantidadPostre.Text = String.Empty;
-            textBox_Mesa.Text = String.Empty;
-            textBox_Precio.Text = String.Empty;
-
-            //Vacio los valores cargados del objeto y lo re-instancio
-            if(!soloBorrarCamposForm)
-            {
-                this.pedido = new Pedido();
-                this.pedido.ClienteQuePide = new Cliente();
-            }
         }
 
         /// <summary>
@@ -1009,7 +269,7 @@ namespace TPFinal_Heladeria_Froddo
         {
             foreach (Pedido item in ventas.ListaVentas)
             {
-                if (item.ClienteQuePide.Id == this.constanteIdCliente)
+                if (item.ClienteQuePide.Dni == this.pedido.ClienteQuePide.Dni)
                 {
                     listBox_Factura.Items.Add(item.ToString());
                     listBox_Factura.Items.Add(item.ClienteQuePide.ToString());
@@ -1019,7 +279,7 @@ namespace TPFinal_Heladeria_Froddo
 
         /// <summary>
         /// Sobrecargo dos messagebox con formato distinto
-        /// </summary>
+        /// </summary>*/
         private DialogResult GenerateMessageBox(string texto, string titulo, MessageBoxButtons btn, MessageBoxIcon icono)
         {
             return MessageBox.Show(texto, titulo, btn, icono);
@@ -1042,15 +302,6 @@ namespace TPFinal_Heladeria_Froddo
 
             if (respuesta == DialogResult.Yes)
             {
-                if(!this.esPrimerPedido)
-                {
-                    DialogResult respuesta2 = this.GenerateMessageBox("¿Desea Cobrar el Pedido?", "Cobrar antes de Salir",
-                                                            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (respuesta2 == DialogResult.Yes)
-                    {
-                        this.Cobrar();
-                    }
-                }
                 Application.Exit();
             }
         }

@@ -21,13 +21,6 @@ public enum ESaboresYogur
     Durazno = 14,
 }
 
-public enum ESaborCafe
-{
-    SinLeche = 15,
-    ConLeche = 16,
-    ConCrema = 17
-}
-
 public enum ETipoPostre
 {
     Helado,

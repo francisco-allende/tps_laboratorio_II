@@ -223,7 +223,7 @@ namespace TPFinal_Heladeria_Froddo
             int id = -1;
 
             id = Validator.NoEsNegativoNiCaracter(input, id);
-
+            
             try
             {
                 Postre postreAgregar = Postre.findPostre(id, this.removidos);
@@ -243,7 +243,7 @@ namespace TPFinal_Heladeria_Froddo
                 throw new Exception("No se encontró el postre");
             }
         }
-
+        
         /// <summary>
         /// Remueve de la tabla un elemento. Luego se puede volver a traer con el Add
         /// al guardarlo en una lsita de removidos, nunca pierdo la informacion
@@ -253,7 +253,7 @@ namespace TPFinal_Heladeria_Froddo
             string input = this.GenerateMessageBox("Remover producto", "Ingrese el id del producto a remover");
             int id = -1;
 
-            id = Validator.NoEsNegativoNiCaracter(input, id);
+           id = Validator.NoEsNegativoNiCaracter(input, id);
 
             try
             {
@@ -303,12 +303,12 @@ namespace TPFinal_Heladeria_Froddo
         {
             if (heladera.ListaGenerica != null)
             {
-                Serializador.SerializarXML("Lista_Stock_Heladera.json", this.heladera.ListaGenerica);
+                Serializador.SerializarXML("Lista_Stock_Heladera.xml", this.heladera.ListaGenerica);
             }
 
             if (removidos.ListaGenerica != null)
             {
-                Serializador.SerializarXML("Lista_Removidos_Heladera.json", this.removidos.ListaGenerica);
+                Serializador.SerializarXML("Lista_Removidos_Heladera.xml", this.removidos.ListaGenerica);
             }
         }
 
@@ -326,10 +326,9 @@ namespace TPFinal_Heladeria_Froddo
             Postre postreEditar = null;
             double espacioDisponible = heladera.CapacidadMaxima - heladera.CapacidadOcupada;
 
-            //parseo id
+
             id = Validator.NoEsNegativoNiCaracter(input, id);
 
-            //busco que este
             try
             {
                 postreEditar = Postre.findPostre(id, this.heladera);

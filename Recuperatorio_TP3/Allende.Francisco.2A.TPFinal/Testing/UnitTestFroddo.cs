@@ -23,36 +23,47 @@ namespace Testing
         }
 
         [TestMethod]
-        public void EnvioNroMesaVacioCero_Should_RetornarGuionMedio()
+        public void RetornaCantidadEscrito_Should_ReturnUnKilo()
         {
             //Arrange 
-            List<int> listaPedidosCliente1 = new List<int>();
-            Cliente cliente1 = new Cliente(12000, "Gerado", listaPedidosCliente1, "Se lo lleva", 0, 800);
-            Pedido pedido1 = new Pedido(1234, cliente1, "Helado", "Vainilla", 1, 800);
-
-            string expected = "-";
-            string actual;
-
-            //Act
-            actual = pedido1.RetornarNroMesa(pedido1.ClienteQuePide.NroMesa);
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void EnvioCantidadNumerica_Should_RetornarCantidadEscrito()
-        {
-            //Arrange. 
-            List<int> listaPedidosCliente1 = new List<int>();
-            Cliente cliente1 = new Cliente(12000, "Gerado", listaPedidosCliente1, "Se lo lleva", 0, 800);
-            Pedido pedido1 = new Pedido(1234, cliente1, "Helado", "Vainilla", 1, 800);
-
+            Pedido pedido = new Pedido();
+            double cantidad = 1;
             string expected = "Un Kilo (1)";
             string actual;
 
             //Act
-            actual = pedido1.RetornarCantidadEscrito(pedido1.Tipo, pedido1.Cantidad);
+            actual = pedido.RetornarCantidadEscrito(cantidad);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        
+        [TestMethod]
+        public void ValidaSaborCorrectoSegunTipo_Should_ReturnFalse()
+        {
+            //Arrange 
+            string tipo = "Yogur";
+            string sabor = "Samabyon";
+            bool expected = false;
+            bool actual;
+
+            //Act
+            actual = Validator.ValidateSabor(tipo, sabor);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        
+        [TestMethod]
+        public void ValidaQueUnStringNoSeaNroNegativoNiContengaCaracteres_Should_ReturnTrue()
+        {
+            //Arrange 
+            string textoAParsear = "74";
+            bool expected = true;
+            bool actual;
+
+            //Act
+            actual = Validator.NoEsNegativoNiCaracter(textoAParsear);
 
             //Assert
             Assert.AreEqual(expected, actual);

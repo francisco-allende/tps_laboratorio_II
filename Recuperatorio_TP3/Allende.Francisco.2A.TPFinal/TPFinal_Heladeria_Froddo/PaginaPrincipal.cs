@@ -19,7 +19,6 @@ namespace TPFinal_Heladeria_Froddo
         //Los valores siempre se guardaran ya que actua por referencia
         private Heladera<Postre> heladeraStock;
         private Heladera<Postre> removidosStock;
-        private Cafeteria cafeteria;
         private Ventas ventas;
 
         public Form_MenuPrincipal()
@@ -35,8 +34,6 @@ namespace TPFinal_Heladeria_Froddo
             {
                 this.heladeraStock = new Heladera<Postre>(500);
                 this.removidosStock = new Heladera<Postre>(15);
-                this.cafeteria = new Cafeteria();
-                this.cafeteria.ListaCafes = new List<Cafe>();
                 this.ventas = new Ventas();
                 this.ventas.ListaVentas =  new List<Pedido>();
                 this.FillList();
@@ -77,7 +74,7 @@ namespace TPFinal_Heladeria_Froddo
             switch (tipoForm)
             {
                 case "TomarPedido":
-                    TomarPedido formVender = new TomarPedido(this, this.heladeraStock, this.ventas, this.cafeteria);
+                    TomarPedido formVender = new TomarPedido(this, this.heladeraStock, this.ventas);
                     this.Hide();
                     formVender.Show();
                     break;
@@ -98,35 +95,31 @@ namespace TPFinal_Heladeria_Froddo
         private void FillList()
         {
             string directoryPath = Serializador.RutaBase;
-            string nameFileStock = "Lista_Stock_Heladera.json";
-            string nameFileRemovidos = "Lista_Removidos_Heladera.json";
-            string nameFileStockCafeteria = "Lista_Stock_Cafeteria.json";
-            string nameFileFacturas = "Facturas.xml";
+            string nameFileStock = "Lista_Stock_Heladera.xml";
+            string nameFileRemovidos = "Lista_Removidos_Heladera.xml";
+            string nameFileVentas = "Lista_Ventas.xml";
 
             try
             {
                 if (File.Exists(directoryPath + nameFileStock) 
                     && File.Exists(directoryPath + nameFileRemovidos)
-                    && File.Exists(directoryPath + nameFileStockCafeteria)
-                    && File.Exists(directoryPath + nameFileFacturas))
+                    && File.Exists(directoryPath + nameFileVentas))
                 {
-                    this.heladeraStock.ListaGenerica = Serializador.DeserealizarJson(nameFileStock, this.heladeraStock.ListaGenerica);
-                    this.removidosStock.ListaGenerica = Serializador.DeserealizarJson(nameFileRemovidos, this.removidosStock.ListaGenerica);
-                    this.cafeteria.ListaCafes = Serializador.DeserealizarJson(nameFileStockCafeteria, this.cafeteria.ListaCafes);
-                    this.ventas.ListaVentas = Serializador.DeserializarXML(nameFileFacturas, this.ventas.ListaVentas);
+                    this.heladeraStock.ListaGenerica = Serializador.DeserializarXML(nameFileStock, this.heladeraStock.ListaGenerica);
+                    this.removidosStock.ListaGenerica = Serializador.DeserializarXML(nameFileRemovidos, this.removidosStock.ListaGenerica);
+                    this.ventas.ListaVentas = Serializador.DeserializarXML(nameFileVentas, this.ventas.ListaVentas);
                 }
                 else
                 {
                     //No existe la ruta al directorio, por ende, hardcodeo la lista y creo el directorio
-                    this.HardcodearListaHelados();
-                    this.HardcodearListaCafes();
+                    this.HardcodearListaPostres();
                     this.HardcodearListaVentas();
                     this.SaveAndExport();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                DialogResult ok = MessageBox.Show("Error al conectarse con la base de datos. Se cerrara el programa", "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult ok = MessageBox.Show("Error al conectarse con la base de datos. Se cerrara el programa " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
         }
@@ -135,7 +128,7 @@ namespace TPFinal_Heladeria_Froddo
         /// <summary>
         /// Hardcodea una lista caso de que no se haye el archivo en el escritorio
         /// </summary>
-        private void HardcodearListaHelados()
+        private void HardcodearListaPostres()
         {
             Helado helado0 = new(0, 25, ETipoPostre.Helado, ESaboresHelado.Chocolate);
             Helado helado1 = new(1, 10, ETipoPostre.Helado, ESaboresHelado.Chocolate_Amargo);
@@ -169,36 +162,17 @@ namespace TPFinal_Heladeria_Froddo
             heladeraStock.ListaGenerica.Add(yogur3);
             heladeraStock.ListaGenerica.Add(yogur4);
         }
-        /// <summary>
-        /// Hardcodea una lista caso de que no se haye el archivo en el escritorio
-        /// </summary>
-        private void HardcodearListaCafes()
-        {
-            Cafe cafe1 = new Cafe(15, ESaborCafe.SinLeche, 200);
-            Cafe cafe2 = new Cafe(16, ESaborCafe.ConLeche, 100);
-            Cafe cafe3 = new Cafe(17, ESaborCafe.ConCrema, 50);
 
-            this.cafeteria.ListaCafes.Add(cafe1);
-            this.cafeteria.ListaCafes.Add(cafe2);
-            this.cafeteria.ListaCafes.Add(cafe3);
-        }
         /// <summary>
         /// Hardcodea una lista caso de que no se haye el archivo en el escritorio
         /// </summary>
         private void HardcodearListaVentas()
         {
-            List<int> listaPedidosCliente1 = new List<int>();
-            List<int> listaPedidosCliente2 = new List<int>();
-
-            listaPedidosCliente1.Add(1234);
-            listaPedidosCliente2.Add(5678);
-
-            Cliente cliente1 = new Cliente(12000, "Gerado", listaPedidosCliente1, "Se lo lleva", 0, 800);
-            Cliente cliente2 = new Cliente(78000, "Mariana", listaPedidosCliente2, "Consume aca", 3, 200);
-
+            Cliente cliente1 = new Cliente(1234567880, "Gerado", "Av. Crisologo Larralde 1200");
+            Cliente cliente2 = new Cliente(0987654321, "Mariana", "Boyaca 4321");
 
             Pedido pedido1 = new Pedido(1234, cliente1, "Helado", "Vainilla", 1, 800);
-            Pedido pedido2 = new Pedido(5678, cliente2, "Cafe", "SinLeche", 1, 200);
+            Pedido pedido2 = new Pedido(5678, cliente2, "Yogur", "Natural", 1, 200);
 
             this.ventas.ListaVentas.Add(pedido1);
             this.ventas.ListaVentas.Add(pedido2);
@@ -208,23 +182,18 @@ namespace TPFinal_Heladeria_Froddo
 
         #region IBaseDeDatos
         /// <summary>
-        /// Exporta las listas en formato txt, json y xml
+        /// Exporta las listas segun formato indicado
         /// </summary>
         public void SaveAndExport()
         {
             if (heladeraStock.ListaGenerica != null)
             {
-                Serializador.SerializarXML("Lista_Stock_Heladera.json", this.heladeraStock.ListaGenerica);
+                Serializador.SerializarXML("Lista_Stock_Heladera.xml", this.heladeraStock.ListaGenerica);
             }
 
             if (heladeraStock.ListaGenerica != null)
             {
-                Serializador.SerializarXML("Lista_Removidos_Heladera.json", this.removidosStock.ListaGenerica);
-            }
-
-            if(this.cafeteria.ListaCafes != null)
-            {
-                Serializador.SerializadorJson("Lista_Stock_Cafeteria.json", this.cafeteria.ListaCafes);
+                Serializador.SerializarXML("Lista_Removidos_Heladera.xml", this.removidosStock.ListaGenerica);
             }
 
             if(this.ventas.ListaVentas != null)

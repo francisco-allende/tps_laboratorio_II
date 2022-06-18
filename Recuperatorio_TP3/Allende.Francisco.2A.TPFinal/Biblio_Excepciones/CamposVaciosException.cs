@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Biblio_Excepciones
 {
-    public class ItemNoSeleccionadoException : Exception
+    public class CamposVaciosException : Exception
     {
-        public ItemNoSeleccionadoException() : this("Item previo no seleccionado")
+        public CamposVaciosException() : this("No se pueden dejar campos vacios")
         {
 
         }
 
-        public ItemNoSeleccionadoException(string message)
+        public CamposVaciosException(string message)
             : base(message)
         {
 
         }
 
-        public ItemNoSeleccionadoException(string message, Exception innerException)
+        public CamposVaciosException(string message, Exception innerException)
             : base(message, innerException)
         {
 
