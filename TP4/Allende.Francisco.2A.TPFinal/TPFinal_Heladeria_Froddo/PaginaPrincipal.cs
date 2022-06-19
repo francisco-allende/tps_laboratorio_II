@@ -14,7 +14,7 @@ using DAO_y_Archivos;
 
 namespace TPFinal_Heladeria_Froddo
 {
-    public partial class Form_MenuPrincipal : Form, IBaseDeDatos
+    public partial class Form_MenuPrincipal : Form//, IBaseDeDatos
     {
         //Al ser atributos de este form principal, puedo compartirlo con otros forms
         //Los valores siempre se guardaran ya que actua por referencia
@@ -69,21 +69,28 @@ namespace TPFinal_Heladeria_Froddo
         /// </summary>
         private void GenerateSecondaryForm(string tipoForm)
         {
-            //meter try catch
-            switch (tipoForm)
+            try
             {
-                case "TomarPedido":
-                    TomarPedido formVender = new TomarPedido(this, this.heladeraStock, this.ventas);
-                    this.Hide();
-                    formVender.Show();
-                    break;
+                switch (tipoForm)
+                {
+                    case "TomarPedido":
+                        TomarPedido formVender = new TomarPedido(this, this.ventas);
+                        this.Hide();
+                        formVender.Show();
+                        break;
 
-                case "Stock":
-                    Stock formStock = new Stock(this, this.heladeraStock);
-                    this.Hide();
-                    formStock.Show();
-                    break;
+                    case "Stock":
+                        Stock formStock = new Stock(this, this.heladeraStock);
+                        this.Hide();
+                        formStock.Show();
+                        break;
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo abrir el formulario");
+            }
+   
         }
 
         /// <summary>
@@ -96,6 +103,7 @@ namespace TPFinal_Heladeria_Froddo
             try
             {
                 this.heladeraStock.ListaGenerica = PostreDAO.Leer();
+                this.ventas.ListaVentas = VentasDAO.Leer();
             }
             catch (Exception ex)
             {
@@ -103,26 +111,6 @@ namespace TPFinal_Heladeria_Froddo
                 this.Close();
             }
         }
-
-        #region IBaseDeDatos
-        /// <summary>
-        /// Exporta las listas segun formato indicado
-        /// </summary>
-        public void SaveAndExport()
-        {
-            if (heladeraStock.ListaGenerica != null)
-            {
-                Serializador.SerializarXML("Lista_Stock_Heladera.xml", this.heladeraStock.ListaGenerica);
-            }
-
-            if(this.ventas.ListaVentas != null)
-            {
-                Serializador.SerializarXML("Lista_Ventas.xml", this.ventas.ListaVentas);
-            }
-        }
-
-        #endregion
-
 
 
         /// <summary>

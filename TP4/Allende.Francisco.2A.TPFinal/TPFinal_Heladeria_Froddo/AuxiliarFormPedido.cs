@@ -10,29 +10,38 @@ using System.Windows.Forms;
 using Entidades;
 using Biblio_Excepciones;
 using Biblio_Interfaces;
+using DAO_y_Archivos;
 
 namespace TPFinal_Heladeria_Froddo
 {
-    public partial class AddPedido : Form
+    public partial class AuxiliarFormPedido : Form
     {
-        private Heladera<Postre> heladeraStock;
-        private Ventas ventas;
+        private string keyword;
         private TomarPedido formPadre;
 
-        public AddPedido(Heladera<Postre> heladeraStock, Ventas ventas, TomarPedido formPadre)
+        public AuxiliarFormPedido(string keyword, TomarPedido formPadre)
         {
             InitializeComponent();
-            this.heladeraStock = heladeraStock;
-            this.ventas = ventas;
+            this.keyword = keyword;
             this.formPadre = formPadre;
         }
 
         private void AddPedido_Load(object sender, EventArgs e)
         {
-
-            this.SetTipos();
-            this.SetSabores();
-            this.SetCantidades();
+            try
+            {
+                this.SetTipos();
+                this.SetSabores();
+                this.SetCantidades();
+                if (keyword == "Modificar")
+                {
+                    this.CargarCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo mostrar el formulario " + ex.Message);
+            }
         }
 
         private void SetTipos()
@@ -43,7 +52,9 @@ namespace TPFinal_Heladeria_Froddo
 
         private void SetSabores()
         {
-            foreach (Postre item in this.heladeraStock.ListaGenerica)
+            List<Postre> lista = PostreDAO.Leer();
+
+            foreach (Postre item in lista)
             {
                 this.cmb_Sabor.Items.Add(item.Sabor);
             }
@@ -68,33 +79,40 @@ namespace TPFinal_Heladeria_Froddo
             {
                 if (this.ValidarCamposLlenos())
                 {
-                    if(Validator.NoContieneNumeros(textBox_Nombre.Text) 
+
+                    if (Validator.NoContieneNumeros(textBox_Nombre.Text)
                         && int.TryParse(textBox_DNI.Text, out int num))
                     {
-                        if(textBox_Nombre.Text.Length < 51 || textBox_Direccion.Text.Length < 101)
+                        if (textBox_Nombre.Text.Length < 51 || textBox_Direccion.Text.Length < 101)
                         {
-                            if(textBox_DNI.Text.Length == 10)
+                            if (textBox_DNI.Text.Length == 10)
                             {
-                                if(Validator.ValidateSabor(cmb_Tipo.Text, cmb_Sabor.Text))
-                                {
-                                    //Cargo los valores
-                                    pedido = this.CargarPedido();
+                                //Cargo los valores
+                                pedido = this.CargarPedido();
 
-                                    //Valido que haya stock antes de venderlo
-                                    if (Validator.HayStock(this.heladeraStock.ListaGenerica, pedido))
-                                    {   
-                                        this.ventas.ListaVentas.Add(pedido);
+                                //Valido que haya stock antes de venderlo
+                                if (Validator.HayStock(PostreDAO.Leer(), pedido))
+                                {
+                                    if (this.keyword == "Agregar")
+                                    {
+                                        VentasDAO.Guardar(pedido);
                                         this.formPadre.pedido = pedido;
+                                        DialogResult = DialogResult.OK;
+                                    }
+                                    else if (this.keyword == "Modificar")
+                                    {
+                                        this.formPadre.pedido = pedido;
+                                        VentasDAO.Modificar(this.formPadre.pedido);
                                         DialogResult = DialogResult.OK;
                                     }
                                     else
                                     {
-                                        throw new SinEspacioEnLaHeladeraExcepcion();
+                                        throw new Exception();
                                     }
                                 }
                                 else
                                 {
-                                    throw new FormatException("Sabor no disponible para dicho postre");
+                                    throw new SinEspacioEnLaHeladeraExcepcion();
                                 }
                             }
                             else
@@ -143,31 +161,53 @@ namespace TPFinal_Heladeria_Froddo
             }    
         }
 
-      
+        private void CargarCampos()
+        {
+            textBox_Nombre.Text = this.formPadre.pedido.Nombre;
+            textBox_DNI.Text = this.formPadre.pedido.Dni.ToString();
+            cmb_Tipo.Text = this.formPadre.pedido.Tipo;
+            cmb_Sabor.Text = this.formPadre.pedido.Sabor;
+            cmb_Cantidad.Text = this.formPadre.pedido.Cantidad.ToString();
+            textBox_Direccion.Text = this.formPadre.pedido.Direccion;
+        }
 
         private Pedido CargarPedido()
         {
-            int idPedido = Pedido.AsignarId();
+            int id = this.formPadre.pedido.Id;
             double cantidad = double.Parse(cmb_Cantidad.Text);
             double precio = Pedido.CalcularPrecio(cmb_Tipo.Text, cantidad);
 
-            Cliente cliente = new Cliente
-                (
-                    int.Parse(textBox_DNI.Text),
-                    textBox_Nombre.Text,
-                    textBox_Direccion.Text
-                );
-
-            Pedido pedido = new Pedido(
-                idPedido,
-                cliente,
+            if (this.keyword == "Modificar")
+            {
+                Pedido pedidoMod = new Pedido(
+                id,
+                int.Parse(textBox_DNI.Text),
+                textBox_Nombre.Text,
+                textBox_Direccion.Text,
                 cmb_Tipo.Text,
                 cmb_Sabor.Text,
                 cantidad,
                 precio
                 );
-            
-            return pedido;
+
+                return pedidoMod;
+            }
+            else if(this.keyword == "Agregar")
+            {
+                Pedido pedidoAdd = new Pedido(
+                   int.Parse(textBox_DNI.Text),
+                   textBox_Nombre.Text,
+                   textBox_Direccion.Text,
+                   cmb_Tipo.Text,
+                   cmb_Sabor.Text,
+                   cantidad,
+                   precio
+                   );
+
+                return pedidoAdd;
+            }
+
+            return null;
         }
 
         private bool ValidarCamposLlenos()

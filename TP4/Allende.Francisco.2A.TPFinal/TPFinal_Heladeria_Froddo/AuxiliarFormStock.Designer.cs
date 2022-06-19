@@ -1,7 +1,7 @@
 ﻿
 namespace TPFinal_Heladeria_Froddo
 {
-    partial class AuxiliarForm
+    partial class AuxiliarFormStock
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace TPFinal_Heladeria_Froddo
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuxiliarForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuxiliarFormStock));
             this.textBox_Sabor = new System.Windows.Forms.TextBox();
             this.cmb_CantidadStock = new System.Windows.Forms.ComboBox();
             this.cmb_Tipo = new System.Windows.Forms.ComboBox();

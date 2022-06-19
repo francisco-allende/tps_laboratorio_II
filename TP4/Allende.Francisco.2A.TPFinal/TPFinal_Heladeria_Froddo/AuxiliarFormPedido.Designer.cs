@@ -1,7 +1,7 @@
 ﻿
 namespace TPFinal_Heladeria_Froddo
 {
-    partial class AddPedido
+    partial class AuxiliarFormPedido
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace TPFinal_Heladeria_Froddo
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPedido));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuxiliarFormPedido));
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
             this.textBox_DNI = new System.Windows.Forms.TextBox();
             this.textBox_Direccion = new System.Windows.Forms.TextBox();

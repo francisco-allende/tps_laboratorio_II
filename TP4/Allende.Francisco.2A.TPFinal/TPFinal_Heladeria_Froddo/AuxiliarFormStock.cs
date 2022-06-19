@@ -13,12 +13,12 @@ using Biblio_Excepciones;
 
 namespace TPFinal_Heladeria_Froddo
 {
-    public partial class AuxiliarForm : Form
+    public partial class AuxiliarFormStock : Form
     {
         private string keyword;
         private Postre postreModify;
 
-        public AuxiliarForm(string keyword, Postre postre)
+        public AuxiliarFormStock(string keyword, Postre postre)
         {
             InitializeComponent();
             this.keyword = keyword;

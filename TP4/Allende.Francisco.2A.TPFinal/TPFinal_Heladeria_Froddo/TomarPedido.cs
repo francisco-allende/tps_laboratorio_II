@@ -14,33 +14,46 @@ using DAO_y_Archivos;
 
 namespace TPFinal_Heladeria_Froddo
 {
-    public partial class TomarPedido : Form, ITabla, IBaseDeDatos
+    public partial class TomarPedido : Form//, ITabla, IBaseDeDatos
     {
         private Form_MenuPrincipal formPrincipal;
-        private Heladera<Postre> heladeraStock;
         private Ventas ventas;
         public Pedido pedido;
 
         /// <summary>
         /// Recibe atributos del form padre, guardando asi todos los cambios aun sin serializar
         /// </summary>
-        public TomarPedido(Form_MenuPrincipal formPrincipal, Heladera<Postre> heladeraStock, Ventas ventas)
+        public TomarPedido(Form_MenuPrincipal formPrincipal, Ventas ventas)
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
-            this.heladeraStock = heladeraStock;
             this.ventas = ventas;
+            try
+            {
+                this.RefreshTabla();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-
         /// <summary>
-        /// Carga o instancia todos sus atirbutos 
+        /// Carga o instancia todos sus atributos 
         /// </summary>
         private void Vender_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-            this.pedido = new Pedido(); //instancio primero el pedido, sino su cliente es null
-            this.pedido.ClienteQuePide = new Cliente();
+            try
+            {
+                this.pedido = new Pedido(); 
+                dataGrid_Pedidos.Columns[3].Width = 200;
+                dataGrid_Pedidos.Columns[5].Width = 200;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         #region Eventos
@@ -49,17 +62,24 @@ namespace TPFinal_Heladeria_Froddo
         {
             try
             {
-                AddPedido frm = new AddPedido(this.heladeraStock, this.ventas, this);
-
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    frm.Hide();
-                    this.AddToTabla();
-                }
+                this.AddToTabla();
             }
             catch (Exception)
             {
                 MessageBox.Show("Sucedio un error inesperado al querer agregar un pedido");
+            }
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Modificar();
+                this.RefreshTabla();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -68,6 +88,7 @@ namespace TPFinal_Heladeria_Froddo
             try
             {
                 this.RemoveFromTabla();
+                this.RefreshTabla();
             }
             catch (FormatException ex)
             {
@@ -92,6 +113,7 @@ namespace TPFinal_Heladeria_Froddo
             try
             {
                 this.Cobrar();
+                this.RefreshTabla();
                 textBox_Total.Text = String.Empty;
             }
             catch (Exception ex)
@@ -132,9 +154,10 @@ namespace TPFinal_Heladeria_Froddo
         /// <summary>
         /// Guarda las facturas de las ventas en un txt
         /// </summary>
-        
         public void SaveAndExport()
         {
+            this.ventas.ListaVentas = VentasDAO.Leer();
+
             if (this.ventas.ListaVentas != null)
             {
                 Serializador.SerializarXML("Lista_Ventas.xml", this.ventas.ListaVentas);
@@ -143,7 +166,7 @@ namespace TPFinal_Heladeria_Froddo
 
                 foreach (Pedido item in this.ventas.ListaVentas)
                 {
-                    if(this.pedido.ClienteQuePide.Dni == item.ClienteQuePide.Dni)
+                    if(this.pedido.Dni == item.Dni)
                     {
                         factura.Add(item);
                     }
@@ -156,41 +179,63 @@ namespace TPFinal_Heladeria_Froddo
         #endregion
 
         #region ITabla
-        /// <summary>
-        /// Carga la tabla con los valores correspondientes
-        /// </summary>
-        public void PrintTabla()
-        {
-            int index = 0;
-
-            foreach (Pedido item in this.ventas.ListaVentas)
-            {
-                if(item.ClienteQuePide.Dni == this.pedido.ClienteQuePide.Dni)
-                {
-                    dataGrid_Pedidos.Rows.Add();
-                    dataGrid_Pedidos.Rows[index].Cells["IdPedido"].Value = item.Id;
-                    dataGrid_Pedidos.Rows[index].Cells["NombreCliente"].Value = item.ClienteQuePide.Nombre;
-                    dataGrid_Pedidos.Rows[index].Cells["DNI"].Value = item.ClienteQuePide.Dni;
-                    dataGrid_Pedidos.Rows[index].Cells["Tipo"].Value = item.Tipo;
-                    dataGrid_Pedidos.Rows[index].Cells["Sabor"].Value = item.Sabor;
-                    dataGrid_Pedidos.Rows[index].Cells["Cantidad"].Value = item.RetornarCantidadEscrito(item.Cantidad);
-                    dataGrid_Pedidos.Rows[index].Cells["Direccion"].Value = item.ClienteQuePide.Direccion;
-                    dataGrid_Pedidos.Rows[index].Cells["Precio"].Value = item.Precio;
-                    textBox_Total.Text = item.CalcularTotal(this.ventas.ListaVentas, item).ToString();
-
-                    index++;
-                }
-            }
-        }
 
         /// <summary>
-        /// Ya confirmada la compra, se añade a la tabla el cliente con su pedido
+        /// Ya confirmada la compra, se añade a la tabla el pedido
         /// </summary>
         public void AddToTabla()
         {
             try
             {
-                this.RefreshTabla();
+                AuxiliarFormPedido frm = new AuxiliarFormPedido("Agregar", this);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    frm.Hide();
+                    this.RefreshTabla();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sucedio un error al querer cargar los datos a la tabla ", ex.Message);
+            }
+        }
+
+        public void Modificar()
+        {
+            try
+            {
+                if (dataGrid_Pedidos.SelectedRows.Count > 0)
+                {
+                    this.pedido = (Pedido)dataGrid_Pedidos.CurrentRow.DataBoundItem;
+
+                    AuxiliarFormPedido frm = new AuxiliarFormPedido("Modificar", this);
+
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        frm.Hide();
+                        this.RefreshTabla();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sucedio un error al querer modificar los datos del pedido ", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Se remueve un pedido de la tabla
+        /// </summary>
+        public void RemoveFromTabla()
+        {
+            try
+            {
+                if (dataGrid_Pedidos.SelectedRows.Count > 0)
+                {
+                    Pedido pedido = (Pedido)dataGrid_Pedidos.CurrentRow.DataBoundItem;
+                    VentasDAO.Eliminar(pedido.Id); 
+                }
             }
             catch (Exception ex)
             {
@@ -199,57 +244,28 @@ namespace TPFinal_Heladeria_Froddo
         }
 
         /// <summary>
-        /// Se remueve un cliente de la tabla
-        /// </summary>
-        public void RemoveFromTabla()
-        {
-            string input = this.GenerateMessageBox("Remover Pedido", "Ingrese el id del pedido a remover");
-            int id = 0;
-            bool encontrado = false;
-
-            id = Validator.NoEsNegativoNiCaracter(input, id);
-
-            foreach (Pedido item in ventas.ListaVentas)
-            {
-                if (id == item.Id)
-                {
-                    ventas.ListaVentas.Remove(item);
-                    this.RefreshTabla();
-                    encontrado = true;
-                    break;
-                }
-            }
-            if (!encontrado)
-            {
-                throw new ItemNoEncontradoException();
-            }
-        }
-
-        /// <summary>
         /// Refresca la tabla al vaciarla y actualizarla con la nueva data
         /// </summary>
         public void RefreshTabla()
         {
-            this.ClearTabla();
-            this.PrintTabla();
+            try
+            {
+                dataGrid_Pedidos.DataSource = VentasDAO.Leer();
+                dataGrid_Pedidos.Refresh();
+                dataGrid_Pedidos.Update();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        /// <summary>
-        /// Limpia la tabla
-        /// </summary>
-        public void ClearTabla()
-        {
-            dataGrid_Pedidos.Rows.Clear();
-        }
         #endregion
 
         #region Metodos
-        
-       
         /// <summary>
-        /// Cobra el total al imrpimr una factura, 
-        /// agregar a la lista de ventas confirmadas al pedido
-        /// Y resetea todo para un nuevo cliente
+        /// Exporto los datos en un xml y los cargo a la lista
+        /// Cobro el total al imprimr una factura 
         /// </summary>
         private void Cobrar()
         {
@@ -260,42 +276,37 @@ namespace TPFinal_Heladeria_Froddo
             //Vacio todo y vuelvo a comenzar
             listBox_Factura.Items.Clear();
             this.pedido = new Pedido();
-            this.ClearTabla();
         }
 
         /// <summary>
-        /// Imprime en el lsit box los datos de la facturacion ya cobrado el/los pedido/s
+        /// Imprime en el list box los datos de la facturacion y calcula el total
         /// </summary>
         private void PrintFactura()
         {
-            foreach (Pedido item in ventas.ListaVentas)
+            double total = 0;
+
+            foreach (Pedido item in this.ventas.ListaVentas)
             {
-                if (item.ClienteQuePide.Dni == this.pedido.ClienteQuePide.Dni)
+                if (item.Dni == this.pedido.Dni)
                 {
                     listBox_Factura.Items.Add(item.ToString());
-                    listBox_Factura.Items.Add(item.ClienteQuePide.ToString());
+                    total += item.Precio;
                 }
             }
+
+            textBox_Total.Text = total.ToString();
         }
 
         /// <summary>
-        /// Sobrecargo dos messagebox con formato distinto
+        /// Modelo de Message box
         /// </summary>*/
         private DialogResult GenerateMessageBox(string texto, string titulo, MessageBoxButtons btn, MessageBoxIcon icono)
         {
             return MessageBox.Show(texto, titulo, btn, icono);
         }
 
-        private string GenerateMessageBox(string titulo, string texto)
-        {
-            return Microsoft.VisualBasic.Interaction.InputBox(texto, titulo);
-        }
-
         /// <summary>
-        /// Si no se cobro aun, y hay un pedido
-        /// y se clickea en salir, pregunta si antes no quiere cobrar
-        /// Si dice que si, cobra y cierra
-        /// Sino, solo cierra sin cobrar
+        /// Pregunta si se desea salir
         /// </summary>
         private void PreguntarAntesDeCerrar()
         {

@@ -33,14 +33,6 @@ namespace TPFinal_Heladeria_Froddo
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGrid_Pedidos = new System.Windows.Forms.DataGridView();
-            this.IdPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_AgregarPedido = new System.Windows.Forms.Button();
             this.btn_Volver = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
@@ -51,6 +43,7 @@ namespace TPFinal_Heladeria_Froddo
             this.label10 = new System.Windows.Forms.Label();
             this.label_total = new System.Windows.Forms.Label();
             this.textBox_Total = new System.Windows.Forms.TextBox();
+            this.btn_Modificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Pedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,15 +61,6 @@ namespace TPFinal_Heladeria_Froddo
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGrid_Pedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid_Pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_Pedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdPedido,
-            this.NombreCliente,
-            this.DNI,
-            this.Tipo,
-            this.Sabor,
-            this.Cantidad,
-            this.Direccion,
-            this.Precio});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -97,67 +81,14 @@ namespace TPFinal_Heladeria_Froddo
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGrid_Pedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGrid_Pedidos.RowTemplate.Height = 25;
-            this.dataGrid_Pedidos.Size = new System.Drawing.Size(926, 291);
+            this.dataGrid_Pedidos.Size = new System.Drawing.Size(985, 291);
             this.dataGrid_Pedidos.TabIndex = 6;
-            // 
-            // IdPedido
-            // 
-            this.IdPedido.HeaderText = "Id Pedido";
-            this.IdPedido.Name = "IdPedido";
-            this.IdPedido.ReadOnly = true;
-            this.IdPedido.Width = 80;
-            // 
-            // NombreCliente
-            // 
-            this.NombreCliente.HeaderText = "Nombre Cliente";
-            this.NombreCliente.Name = "NombreCliente";
-            this.NombreCliente.ReadOnly = true;
-            this.NombreCliente.Width = 150;
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "DNI";
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            this.DNI.Width = 80;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // Sabor
-            // 
-            this.Sabor.HeaderText = "Sabor";
-            this.Sabor.Name = "Sabor";
-            this.Sabor.ReadOnly = true;
-            this.Sabor.Width = 150;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            this.Direccion.Width = 120;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
             // 
             // btn_AgregarPedido
             // 
             this.btn_AgregarPedido.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_AgregarPedido.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_AgregarPedido.Location = new System.Drawing.Point(2, 16);
+            this.btn_AgregarPedido.Location = new System.Drawing.Point(2, 12);
             this.btn_AgregarPedido.Name = "btn_AgregarPedido";
             this.btn_AgregarPedido.Size = new System.Drawing.Size(108, 50);
             this.btn_AgregarPedido.TabIndex = 1;
@@ -169,7 +100,7 @@ namespace TPFinal_Heladeria_Froddo
             // 
             this.btn_Volver.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Volver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Volver.Location = new System.Drawing.Point(609, 16);
+            this.btn_Volver.Location = new System.Drawing.Point(699, 12);
             this.btn_Volver.Name = "btn_Volver";
             this.btn_Volver.Size = new System.Drawing.Size(108, 50);
             this.btn_Volver.TabIndex = 4;
@@ -181,7 +112,7 @@ namespace TPFinal_Heladeria_Froddo
             // 
             this.btn_Salir.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Salir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Salir.Location = new System.Drawing.Point(820, 16);
+            this.btn_Salir.Location = new System.Drawing.Point(879, 12);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(108, 50);
             this.btn_Salir.TabIndex = 5;
@@ -203,7 +134,7 @@ namespace TPFinal_Heladeria_Froddo
             // 
             this.btn_Cobrar.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_Cobrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Cobrar.Location = new System.Drawing.Point(386, 16);
+            this.btn_Cobrar.Location = new System.Drawing.Point(523, 12);
             this.btn_Cobrar.Name = "btn_Cobrar";
             this.btn_Cobrar.Size = new System.Drawing.Size(108, 50);
             this.btn_Cobrar.TabIndex = 3;
@@ -215,7 +146,7 @@ namespace TPFinal_Heladeria_Froddo
             // 
             this.btn_Remover.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Remover.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Remover.Location = new System.Drawing.Point(185, 16);
+            this.btn_Remover.Location = new System.Drawing.Point(168, 12);
             this.btn_Remover.Name = "btn_Remover";
             this.btn_Remover.Size = new System.Drawing.Size(108, 50);
             this.btn_Remover.TabIndex = 2;
@@ -230,7 +161,7 @@ namespace TPFinal_Heladeria_Froddo
             this.listBox_Factura.ItemHeight = 20;
             this.listBox_Factura.Location = new System.Drawing.Point(2, 434);
             this.listBox_Factura.Name = "listBox_Factura";
-            this.listBox_Factura.Size = new System.Drawing.Size(926, 104);
+            this.listBox_Factura.Size = new System.Drawing.Size(985, 104);
             this.listBox_Factura.TabIndex = 8;
             // 
             // label10
@@ -259,15 +190,28 @@ namespace TPFinal_Heladeria_Froddo
             this.textBox_Total.Location = new System.Drawing.Point(796, 379);
             this.textBox_Total.Name = "textBox_Total";
             this.textBox_Total.ReadOnly = true;
-            this.textBox_Total.Size = new System.Drawing.Size(131, 29);
+            this.textBox_Total.Size = new System.Drawing.Size(191, 29);
             this.textBox_Total.TabIndex = 7;
+            // 
+            // btn_Modificar
+            // 
+            this.btn_Modificar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Modificar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Modificar.Location = new System.Drawing.Point(348, 12);
+            this.btn_Modificar.Name = "btn_Modificar";
+            this.btn_Modificar.Size = new System.Drawing.Size(108, 50);
+            this.btn_Modificar.TabIndex = 42;
+            this.btn_Modificar.Text = "Modificar";
+            this.btn_Modificar.UseVisualStyleBackColor = false;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // TomarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-            this.ClientSize = new System.Drawing.Size(939, 551);
+            this.ClientSize = new System.Drawing.Size(999, 551);
+            this.Controls.Add(this.btn_Modificar);
             this.Controls.Add(this.textBox_Total);
             this.Controls.Add(this.label_total);
             this.Controls.Add(this.label10);
@@ -300,15 +244,8 @@ namespace TPFinal_Heladeria_Froddo
         private System.Windows.Forms.Button btn_Remover;
         private System.Windows.Forms.ListBox listBox_Factura;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sabor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.Label label_total;
         private System.Windows.Forms.TextBox textBox_Total;
+        private System.Windows.Forms.Button btn_Modificar;
     }
 }

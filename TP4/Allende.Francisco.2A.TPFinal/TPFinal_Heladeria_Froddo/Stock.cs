@@ -25,14 +25,28 @@ namespace TPFinal_Heladeria_Froddo
             InitializeComponent();
             this.formPrincipal = formPrincipal;
             this.heladera = heladera;
-            this.RefreshTabla();
+            try
+            {
+                this.RefreshTabla();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo mostrar la tabla");
+            }
         }
 
         private void Stock_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-            datagrid_Stock.Columns[1].Width = 150;
-            datagrid_Stock.Columns[3].Width = 180;
+            try
+            {
+                datagrid_Stock.Columns[1].Width = 150;
+                datagrid_Stock.Columns[3].Width = 180;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         #region eventos
@@ -43,14 +57,6 @@ namespace TPFinal_Heladeria_Froddo
             {
                 this.AddToTabla();
                 this.RefreshTabla();
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (NullReferenceException ex)
-            {
-                MessageBox.Show(ex.Message + "\nNo se pudo agregar el elemento\n");
             }
             catch (Exception)
             {
@@ -64,18 +70,6 @@ namespace TPFinal_Heladeria_Froddo
             {
                 this.RemoveFromTabla();
                 this.RefreshTabla();
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (ItemNoEncontradoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (NullReferenceException ex)
-            {
-                MessageBox.Show(ex.Message + "\nNo se pudo remover el elemento\n");
             }
             catch (Exception)
             {
@@ -91,14 +85,6 @@ namespace TPFinal_Heladeria_Froddo
                 this.RefreshTabla();
             }
             catch (FormatException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("\nNo se pudo editar el elemento\n");
-            }
-            catch (ItemNoEncontradoException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -159,13 +145,13 @@ namespace TPFinal_Heladeria_Froddo
 
         #region ITabla
         /// <summary>
-        /// Añade a la tabla un elemento previamente removido, no la cantidad.
+        /// Añade a la tabla un elemento nuevo ingresado por el usuario en un formulario auxiliar
         /// </summary>
         public void AddToTabla()
         {
             try
             {
-                AuxiliarForm aux = new AuxiliarForm("Agregar", new Postre());
+                AuxiliarFormStock aux = new AuxiliarFormStock("Agregar", new Postre());
 
                 if(aux.ShowDialog() == DialogResult.OK)
                 {
@@ -253,22 +239,13 @@ namespace TPFinal_Heladeria_Froddo
                 {
                     Postre postre = (Postre)datagrid_Stock.CurrentRow.DataBoundItem;
 
-                    AuxiliarForm aux = new AuxiliarForm("Modificar", postre);
+                    AuxiliarFormStock aux = new AuxiliarFormStock("Modificar", postre);
 
                     if (aux.ShowDialog() == DialogResult.OK)
                     {
                         this.RefreshTabla();
                     }
                 }
-                //postreEditar = Postre.findPostre(id, this.heladera);
-            }
-            catch (ItemNoEncontradoException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (NullReferenceException ex)
-            {
-                throw ex;
             }
             catch (Exception)
             {
@@ -277,16 +254,11 @@ namespace TPFinal_Heladeria_Froddo
         }
 
         /// <summary>
-        /// Sobrecargo dos modelos distintos de message box
+        /// Modelo de message box
         /// </summary>
         private DialogResult GenerateMessageBox(string texto, string titulo, MessageBoxButtons btn, MessageBoxIcon icono)
         {
             return MessageBox.Show(texto, titulo, btn, icono);
-        }
-
-        private string GenerateMessageBox(string titulo, string texto)
-        {
-            return Microsoft.VisualBasic.Interaction.InputBox(texto, titulo);
         }
 
         /// <summary>

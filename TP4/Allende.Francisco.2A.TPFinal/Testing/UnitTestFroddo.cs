@@ -39,22 +39,6 @@ namespace Testing
         }
         
         [TestMethod]
-        public void ValidaSaborCorrectoSegunTipo_Should_ReturnFalse()
-        {
-            //Arrange 
-            string tipo = "Yogur";
-            string sabor = "Samabyon";
-            bool expected = false;
-            bool actual;
-
-            //Act
-            actual = Validator.ValidateSabor(tipo, sabor);
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        
-        [TestMethod]
         public void ValidaQueUnStringNoSeaNroNegativoNiContengaCaracteres_Should_ReturnTrue()
         {
             //Arrange 

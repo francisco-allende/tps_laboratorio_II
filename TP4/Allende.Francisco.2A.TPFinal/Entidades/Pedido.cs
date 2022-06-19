@@ -9,14 +9,19 @@ namespace Entidades
     public class Pedido
     {
         private int id;
-        private Cliente clienteQuePide; //cada pedido tiene un solo cliente
+        private int dni;
+        private string nombre;
+        private string direccion;
         private string tipo;
         private string sabor;
         private double cantidad;
         private double precio;
 
+
         public int Id { get => this.id; set => this.id = value; }
-        public Cliente ClienteQuePide { get => this.clienteQuePide; set => this.clienteQuePide = value; }
+        public int Dni { get => this.dni; set => this.dni = value; }
+        public string Nombre { get => this.nombre; set => this.nombre = value; }
+        public string Direccion { get => this.direccion; set => this.direccion = value; }
         public string Tipo { get => this.tipo; set => this.tipo = value; }
         public string Sabor { get => this.sabor; set => this.sabor = value; }
         public double Cantidad { get => this.cantidad; set => this.cantidad = value; }
@@ -32,21 +37,29 @@ namespace Entidades
             this.tipo = tipo;
         }
 
-        public Pedido(int id, Cliente clienteQuePide, string tipo, string sabor, double cantidad, double precio)
+        
+        public Pedido(int id, int dni, string nombre, string direccion, string tipo, string sabor, double cantidad, double precio)
         {
-            this.id = id;
-            this.clienteQuePide = clienteQuePide;
+            this.id = id; 
+            this.dni = dni;
+            this.nombre = nombre;
+            this.direccion = direccion;
             this.tipo = tipo;
             this.sabor = sabor;
             this.cantidad = cantidad;
             this.precio = precio;
         }
 
-        public static int AsignarId()
+        //Para el SQL de id autoincremental
+        public Pedido(int dni, string nombre, string direccion, string tipo, string sabor, double cantidad, double precio)
         {
-            Random radnomId = new Random();
-            int id = radnomId.Next(1111, 9999); //es max value -1
-            return id;
+            this.dni = dni;
+            this.nombre = nombre;
+            this.direccion = direccion;
+            this.tipo = tipo;
+            this.sabor = sabor;
+            this.cantidad = cantidad;
+            this.precio = precio;
         }
 
         private static double SumarIva(double retornoPrecio)
@@ -142,7 +155,7 @@ namespace Entidades
 
             foreach (Pedido item in lista)
             {
-                if(pedido.ClienteQuePide.Dni == item.ClienteQuePide.Dni)
+                if(pedido.dni == item.Dni)
                 {
                     total += item.precio;
                 }

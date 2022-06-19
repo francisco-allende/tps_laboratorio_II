@@ -68,39 +68,19 @@ namespace Entidades
             return num;
         }
 
-        public static bool ValidateSabor(string tipo, string sabor)
-        {
-            if(tipo == "Yogur")
-            {
-                if(sabor != "Natural" && sabor != "Frutilla" && sabor != "Durazno" && sabor != "Vainilla")
-                {
-                    return false;
-                }
-            }
-            if(tipo == "Helado")
-            {
-                if(sabor == "Natural" || sabor == "Frutilla" || sabor == "Durazno")
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
         public static bool HayStock(List<Postre> listaStock, Pedido pedido)
         {
             foreach (Postre item in listaStock)
             {
                 if (item.Sabor == pedido.Sabor)
                 {
-                    /*
                     if (item.CantidadStock > pedido.Cantidad)
                     {
                         //Resto stock
-                        //item.CantidadStock = item.CantidadStock - pedido.Cantidad;
+                        int resta = (int)Math.Round(pedido.Cantidad);
+                        item.CantidadStock = item.CantidadStock - resta;
                         return true;
-                    }*/
+                    }
                 }
             }
 
