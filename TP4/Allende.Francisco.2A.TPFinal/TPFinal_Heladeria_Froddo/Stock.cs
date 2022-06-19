@@ -15,7 +15,7 @@ using DAO_y_Archivos;
 
 namespace TPFinal_Heladeria_Froddo
 {
-    public partial class Stock : Form//, ITabla, IBaseDeDatos
+    public partial class Stock : Form, ITabla, IExport
     {
         private Heladera<Postre> heladera;
         private Form_MenuPrincipal formPrincipal;
@@ -211,7 +211,7 @@ namespace TPFinal_Heladeria_Froddo
         }
         #endregion
 
-        #region IBaseDeDatos
+        #region IExport
 
         /// <summary>
         /// Serialzia las listas usadas a XML, Json y Txt

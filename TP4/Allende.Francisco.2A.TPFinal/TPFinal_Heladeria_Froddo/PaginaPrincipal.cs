@@ -14,7 +14,7 @@ using DAO_y_Archivos;
 
 namespace TPFinal_Heladeria_Froddo
 {
-    public partial class Form_MenuPrincipal : Form//, IBaseDeDatos
+    public partial class Form_MenuPrincipal : Form
     {
         //Al ser atributos de este form principal, puedo compartirlo con otros forms
         //Los valores siempre se guardaran ya que actua por referencia

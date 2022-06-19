@@ -8,10 +8,9 @@ namespace Biblio_Interfaces
 {
     public interface ITabla
     {
-        void PrintTabla();
         void AddToTabla();
         void RemoveFromTabla();
         void RefreshTabla();
-        void ClearTabla();
+        void Modificar();
     }
 }

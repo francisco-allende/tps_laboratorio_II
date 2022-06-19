@@ -14,7 +14,7 @@ using DAO_y_Archivos;
 
 namespace TPFinal_Heladeria_Froddo
 {
-    public partial class TomarPedido : Form//, ITabla, IBaseDeDatos
+    public partial class TomarPedido : Form, ITabla, IExport
     {
         private Form_MenuPrincipal formPrincipal;
         private Ventas ventas;
@@ -150,7 +150,7 @@ namespace TPFinal_Heladeria_Froddo
 
         #endregion
         
-        #region IBaseDeDatos
+        #region IExport
         /// <summary>
         /// Guarda las facturas de las ventas en un txt
         /// </summary>

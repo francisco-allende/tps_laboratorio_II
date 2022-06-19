@@ -14,7 +14,7 @@ namespace Entidades
     //Le indico que al momento de serialziar tiene que incluir la clase que lo hereda
     [XmlInclude(typeof(Helado))]
     [XmlInclude(typeof(Yogur))]
-    public class Postre //: IEsConsumible
+    public class Postre
     {
         protected int id;
         protected int cantidadStock;

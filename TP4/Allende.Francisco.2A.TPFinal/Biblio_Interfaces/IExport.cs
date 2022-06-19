@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Biblio_Interfaces
 {
-    public interface IEsConsumible
+    public interface IExport
     {
-        int Id { get; set; }
-        double CantidadStock { get; set; }
+        void SaveAndExport();
     }
 }
