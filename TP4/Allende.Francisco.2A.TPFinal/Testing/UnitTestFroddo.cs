@@ -52,5 +52,36 @@ namespace Testing
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void ValidaExtensionStringEnDiez_Should_ReturnUnTrue()
+        {
+            //Arrange 
+            string dni = "3980776621";
+            bool expected = true;
+            bool actual;
+
+            //Act
+            actual = dni.TieneDiezCaracteres();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ValidaExtensionStringMenorA_Should_ReturnUnTrue()
+        {
+            //Arrange 
+            string direccion = "Av Los Alerces 5467 Dpto 6";
+            int limite = 101;
+            bool expected = true;
+            bool actual;
+
+            //Act
+            actual = direccion.MenorA(limite);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

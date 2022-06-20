@@ -86,9 +86,9 @@ namespace TPFinal_Heladeria_Froddo
                     if (Validator.NoContieneNumeros(textBox_Nombre.Text)
                         && int.TryParse(textBox_DNI.Text, out int num))
                     {
-                        if (textBox_Nombre.Text.Length < 51 || textBox_Direccion.Text.Length < 101)
+                        if (textBox_Nombre.Text.MenorA(51) || textBox_Direccion.Text.MenorA(101))
                         {
-                            if (textBox_DNI.Text.Length == 10)
+                            if (textBox_DNI.Text.TieneDiezCaracteres())
                             {
                                 //Cargo los valores
                                 pedido = this.CargarPedido();
