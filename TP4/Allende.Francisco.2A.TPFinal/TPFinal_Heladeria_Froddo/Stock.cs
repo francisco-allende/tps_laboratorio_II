@@ -21,6 +21,7 @@ namespace TPFinal_Heladeria_Froddo
     {
         private Heladera<Postre> heladera;
         private Form_MenuPrincipal formPrincipal;
+        Func<string, string, MessageBoxButtons, MessageBoxIcon, DialogResult> delegateMessageBox = GenerateMessageBox;
 
         public Stock(Form_MenuPrincipal formPrincipal, Heladera<Postre> heladera)
         {
@@ -225,7 +226,9 @@ namespace TPFinal_Heladeria_Froddo
             if (heladera.ListaGenerica != null)
             {                
                 Serializador.SerializadorJson("Lista_Stock_Heladera.json", this.heladera.ListaGenerica);
-                this.GenerateMessageBox("Se guardaron los cambios y se creo una carpeta en el escritorio", "Guardado con éxito",
+                
+                delegateMessageBox("Se guardaron los cambios y se creo una carpeta en el escritorio", 
+                    "Guardado con éxito",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -259,9 +262,9 @@ namespace TPFinal_Heladeria_Froddo
         }
 
         /// <summary>
-        /// Modelo de message box
+        /// Modelo de message box. Utiliza delegado
         /// </summary>
-        private DialogResult GenerateMessageBox(string texto, string titulo, MessageBoxButtons btn, MessageBoxIcon icono)
+        private static DialogResult GenerateMessageBox(string texto, string titulo, MessageBoxButtons btn, MessageBoxIcon icono)
         {
             return MessageBox.Show(texto, titulo, btn, icono);
         }
@@ -272,8 +275,9 @@ namespace TPFinal_Heladeria_Froddo
         /// </summary>
         private void PreguntarAntesDeCerrar()
         {
-            DialogResult respuesta = this.GenerateMessageBox("¿Seguro de querer salir?", "Salir",
+            DialogResult respuesta = delegateMessageBox("¿Seguro de querer salir?", "Salir",
                                                             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (respuesta == DialogResult.Yes)
             {
                 Application.Exit();

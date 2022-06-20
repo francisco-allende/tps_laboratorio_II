@@ -17,7 +17,6 @@ namespace Entidades
         private double cantidad;
         private double precio;
 
-
         public int Id { get => this.id; set => this.id = value; }
         public int Dni { get => this.dni; set => this.dni = value; }
         public string Nombre { get => this.nombre; set => this.nombre = value; }

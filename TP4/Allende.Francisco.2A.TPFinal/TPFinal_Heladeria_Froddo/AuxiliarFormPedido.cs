@@ -18,6 +18,7 @@ namespace TPFinal_Heladeria_Froddo
     {
         private string keyword;
         private TomarPedido formPadre;
+        public event Action<string> OnConfirmacion; 
 
         public AuxiliarFormPedido(string keyword, TomarPedido formPadre)
         {
@@ -37,6 +38,7 @@ namespace TPFinal_Heladeria_Froddo
                 {
                     this.CargarCampos();
                 }
+                this.OnConfirmacion += Notificar;
             }
             catch (Exception ex)
             {
@@ -74,6 +76,7 @@ namespace TPFinal_Heladeria_Froddo
         private void btn_Confirmar_Click(object sender, EventArgs e)
         {
             Pedido pedido = new Pedido();
+           
 
             try
             {
@@ -97,12 +100,14 @@ namespace TPFinal_Heladeria_Froddo
                                     {
                                         VentasDAO.Guardar(pedido);
                                         this.formPadre.pedido = pedido;
+                                        OnConfirmacion.Invoke("Agregado");
                                         DialogResult = DialogResult.OK;
                                     }
                                     else if (this.keyword == "Modificar")
                                     {
                                         this.formPadre.pedido = pedido;
                                         VentasDAO.Modificar(this.formPadre.pedido);
+                                        OnConfirmacion.Invoke("Modificado");
                                         DialogResult = DialogResult.OK;
                                     }
                                     else
@@ -159,6 +164,11 @@ namespace TPFinal_Heladeria_Froddo
             {
                 MessageBox.Show("Sucedio un error inesperado");
             }    
+        }
+
+        private void Notificar(string msj)
+        {
+            MessageBox.Show($"El producto ha sido {msj} con exito");
         }
 
         private void CargarCampos()

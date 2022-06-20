@@ -17,6 +17,7 @@ namespace TPFinal_Heladeria_Froddo
     {
         private string keyword;
         private Postre postreModify;
+        public event Action<string> OnConfirmacion;
 
         public AuxiliarFormStock(string keyword, Postre postre)
         {
@@ -29,6 +30,19 @@ namespace TPFinal_Heladeria_Froddo
         {
             cmb_CantidadStock.Items.AddRange(Enumerable.Range(1, 500).Select(i => (object)i).ToArray());
             this.SetTipos();
+            try
+            {
+                this.OnConfirmacion += Notificar;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Sucedio un error");
+            }
+        }
+
+        private void Notificar(string msj)
+        {
+            MessageBox.Show($"Producto {msj} con exito de la lista de stock");
         }
 
         private void btn_Confirmar_Click(object sender, EventArgs e)
@@ -45,6 +59,7 @@ namespace TPFinal_Heladeria_Froddo
                             textBox_Sabor.Text
                             ));
 
+                        OnConfirmacion.Invoke("Agregado");
                         DialogResult = DialogResult.OK;
                     }
                     else if(this.keyword == "Modificar")
@@ -55,6 +70,7 @@ namespace TPFinal_Heladeria_Froddo
 
                         PostreDAO.Modificar(this.postreModify);
 
+                        OnConfirmacion.Invoke("Modificado");
                         DialogResult = DialogResult.OK;
                     }
                     else

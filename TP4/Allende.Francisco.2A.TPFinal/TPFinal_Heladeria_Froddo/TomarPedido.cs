@@ -20,6 +20,7 @@ namespace TPFinal_Heladeria_Froddo
         private Form_MenuPrincipal formPrincipal;
         private Ventas ventas;
         public Pedido pedido;
+        Func<string, string, MessageBoxButtons, MessageBoxIcon, DialogResult> delegateMessageBox = GenerateMessageBox;
 
         /// <summary>
         /// Recibe atributos del form padre, guardando asi todos los cambios aun sin serializar
@@ -158,7 +159,17 @@ namespace TPFinal_Heladeria_Froddo
         public async void SaveAndExport()
         {
             label_Factura.Text = "Aguarde...";
-            this.ventas.ListaVentas = await GestionarArchivos.CargarYOrdenarVentas();
+            try
+            {
+                this.ventas.ListaVentas = await GestionarArchivos.CargarYOrdenarVentas();
+            }
+
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
             label_Factura.Text = "Factura";
 
             if (this.ventas.ListaVentas != null)
@@ -274,42 +285,35 @@ namespace TPFinal_Heladeria_Froddo
         {
             this.SaveAndExport();
             this.PrintFactura();
-            MessageBox.Show("Venta realizada y guardada con exito!");
-
+          
             //Vacio todo y vuelvo a comenzar
-            listBox_Factura.Items.Clear();
             this.pedido = new Pedido();
         }
 
         /// <summary>
         /// Imprime en el list box los datos de la facturacion y calcula el total
-        /// Simula el tiempo de impresion
         /// </summary>
-        private async void PrintFactura()
+        private void PrintFactura()
         {
             double total = 0;
-            label_Factura.Text = "Imprimiendo...";
 
-            await Task.Run(() =>
+            foreach (Pedido item in this.ventas.ListaVentas)
             {
-                foreach (Pedido item in this.ventas.ListaVentas)
+                if (item.Dni == this.pedido.Dni)
                 {
-                    if (item.Dni == this.pedido.Dni)
-                    {
-                        //Thread.Sleep(3000);
-                        listBox_Factura.Items.Add(item.ToString());
-                        total += item.Precio;
-                    }
+                    Thread.Sleep(4000);
+                    listBox_Factura.Items.Add(item.ToString());
+                    total += item.Precio;
                 }
-            });
-            label_Factura.Text = "Factura";
+            }
+
             textBox_Total.Text = total.ToString();
         }
 
         /// <summary>
         /// Modelo de Message box
         /// </summary>*/
-        private DialogResult GenerateMessageBox(string texto, string titulo, MessageBoxButtons btn, MessageBoxIcon icono)
+        private static DialogResult GenerateMessageBox(string texto, string titulo, MessageBoxButtons btn, MessageBoxIcon icono)
         {
             return MessageBox.Show(texto, titulo, btn, icono);
         }
@@ -319,7 +323,7 @@ namespace TPFinal_Heladeria_Froddo
         /// </summary>
         private void PreguntarAntesDeCerrar()
         {
-            DialogResult respuesta = this.GenerateMessageBox("¿Seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult respuesta = delegateMessageBox("¿Seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (respuesta == DialogResult.Yes)
             {

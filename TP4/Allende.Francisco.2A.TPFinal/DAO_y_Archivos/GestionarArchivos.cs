@@ -82,14 +82,14 @@ namespace DAO_y_Archivos
         {
             List<Postre> list = await Task.Run(() =>
             {
-                //Thread.Sleep(5000);
+                Thread.Sleep(3000);
                 return PostreDAO.Leer();
             });
 
             //Ordeno de mayor a menor
             await Task.Run(() =>
             {
-                //Thread.Sleep(3000);
+                Thread.Sleep(2000);
                 list.Sort((p1, p2) => p2.CantidadStock - p1.CantidadStock);
             });
 
@@ -105,14 +105,14 @@ namespace DAO_y_Archivos
         {
             List<Pedido> list = await Task.Run(() =>
             {
-                //Thread.Sleep(5000);
+                Thread.Sleep(3000);
                 return VentasDAO.Leer();
             });
 
             //Ordeno de mayor a menor DNI
             await Task.Run(() =>
             {
-                //Thread.Sleep(3000);
+                Thread.Sleep(2000);
                 list.Sort((v1, v2) => v2.Dni - v1.Dni);
             });
 
