@@ -29,9 +29,9 @@ namespace TPFinal_Heladeria_Froddo
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGrid_Pedidos = new System.Windows.Forms.DataGridView();
             this.btn_AgregarPedido = new System.Windows.Forms.Button();
             this.btn_Volver = new System.Windows.Forms.Button();
@@ -40,7 +40,7 @@ namespace TPFinal_Heladeria_Froddo
             this.btn_Cobrar = new System.Windows.Forms.Button();
             this.btn_Remover = new System.Windows.Forms.Button();
             this.listBox_Factura = new System.Windows.Forms.ListBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label_Factura = new System.Windows.Forms.Label();
             this.label_total = new System.Windows.Forms.Label();
             this.textBox_Total = new System.Windows.Forms.TextBox();
             this.btn_Modificar = new System.Windows.Forms.Button();
@@ -52,34 +52,34 @@ namespace TPFinal_Heladeria_Froddo
             this.dataGrid_Pedidos.AllowUserToAddRows = false;
             this.dataGrid_Pedidos.AllowUserToDeleteRows = false;
             this.dataGrid_Pedidos.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_Pedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Pedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGrid_Pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGrid_Pedidos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid_Pedidos.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGrid_Pedidos.Location = new System.Drawing.Point(2, 72);
             this.dataGrid_Pedidos.Name = "dataGrid_Pedidos";
             this.dataGrid_Pedidos.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_Pedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Pedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGrid_Pedidos.RowTemplate.Height = 25;
             this.dataGrid_Pedidos.Size = new System.Drawing.Size(985, 291);
             this.dataGrid_Pedidos.TabIndex = 6;
@@ -164,15 +164,15 @@ namespace TPFinal_Heladeria_Froddo
             this.listBox_Factura.Size = new System.Drawing.Size(985, 104);
             this.listBox_Factura.TabIndex = 8;
             // 
-            // label10
+            // label_Factura
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(2, 386);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(122, 45);
-            this.label10.TabIndex = 40;
-            this.label10.Text = "Factura";
+            this.label_Factura.AutoSize = true;
+            this.label_Factura.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_Factura.Location = new System.Drawing.Point(2, 386);
+            this.label_Factura.Name = "label_Factura";
+            this.label_Factura.Size = new System.Drawing.Size(122, 45);
+            this.label_Factura.TabIndex = 40;
+            this.label_Factura.Text = "Factura";
             // 
             // label_total
             // 
@@ -214,7 +214,7 @@ namespace TPFinal_Heladeria_Froddo
             this.Controls.Add(this.btn_Modificar);
             this.Controls.Add(this.textBox_Total);
             this.Controls.Add(this.label_total);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label_Factura);
             this.Controls.Add(this.listBox_Factura);
             this.Controls.Add(this.btn_Remover);
             this.Controls.Add(this.btn_Cobrar);
@@ -243,7 +243,7 @@ namespace TPFinal_Heladeria_Froddo
         private System.Windows.Forms.Button btn_Cobrar;
         private System.Windows.Forms.Button btn_Remover;
         private System.Windows.Forms.ListBox listBox_Factura;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label_Factura;
         private System.Windows.Forms.Label label_total;
         private System.Windows.Forms.TextBox textBox_Total;
         private System.Windows.Forms.Button btn_Modificar;

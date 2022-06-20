@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
@@ -12,6 +13,7 @@ using Biblio_Excepciones;
 using System.IO;
 using Biblio_Interfaces;
 using DAO_y_Archivos;
+
 
 namespace TPFinal_Heladeria_Froddo
 {
@@ -107,8 +109,6 @@ namespace TPFinal_Heladeria_Froddo
             try
             {
                 this.SaveAndExport();
-                this.GenerateMessageBox("Se guardaron los cambios y se creo una carpeta en el escritorio", "Guardado con éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -216,12 +216,17 @@ namespace TPFinal_Heladeria_Froddo
         /// <summary>
         /// Serialzia las listas usadas a XML, Json y Txt
         /// </summary>
-        public void SaveAndExport()
+        public async void SaveAndExport()
         {
+            label_Stock.Text = "Aguarde...";
+            this.heladera.ListaGenerica = await GestionarArchivos.CargarYOrdenarPostre();
+            label_Stock.Text = "";
+
             if (heladera.ListaGenerica != null)
-            {
-                this.heladera.ListaGenerica = PostreDAO.Leer();
-                Serializador.SerializarXML("Lista_Stock_Heladera.xml", this.heladera.ListaGenerica);
+            {                
+                Serializador.SerializadorJson("Lista_Stock_Heladera.json", this.heladera.ListaGenerica);
+                this.GenerateMessageBox("Se guardaron los cambios y se creo una carpeta en el escritorio", "Guardado con éxito",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

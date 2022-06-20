@@ -29,8 +29,8 @@ namespace TPFinal_Heladeria_Froddo
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.datagrid_Stock = new System.Windows.Forms.DataGridView();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Remove = new System.Windows.Forms.Button();
@@ -38,6 +38,7 @@ namespace TPFinal_Heladeria_Froddo
             this.btnSalir = new System.Windows.Forms.Button();
             this.btn_Volver = new System.Windows.Forms.Button();
             this.btn_Exportar = new System.Windows.Forms.Button();
+            this.label_Stock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Stock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,23 +46,23 @@ namespace TPFinal_Heladeria_Froddo
             // 
             this.datagrid_Stock.AllowUserToAddRows = false;
             this.datagrid_Stock.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagrid_Stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagrid_Stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.datagrid_Stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagrid_Stock.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagrid_Stock.DefaultCellStyle = dataGridViewCellStyle4;
             this.datagrid_Stock.Location = new System.Drawing.Point(168, 12);
             this.datagrid_Stock.Name = "datagrid_Stock";
             this.datagrid_Stock.ReadOnly = true;
@@ -141,12 +142,22 @@ namespace TPFinal_Heladeria_Froddo
             this.btn_Exportar.UseVisualStyleBackColor = false;
             this.btn_Exportar.Click += new System.EventHandler(this.btn_Exportar_Click);
             // 
+            // label_Stock
+            // 
+            this.label_Stock.AutoSize = true;
+            this.label_Stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_Stock.Location = new System.Drawing.Point(54, 12);
+            this.label_Stock.Name = "label_Stock";
+            this.label_Stock.Size = new System.Drawing.Size(0, 25);
+            this.label_Stock.TabIndex = 10;
+            // 
             // Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(760, 483);
+            this.ClientSize = new System.Drawing.Size(760, 470);
+            this.Controls.Add(this.label_Stock);
             this.Controls.Add(this.btn_Exportar);
             this.Controls.Add(this.btn_Volver);
             this.Controls.Add(this.btnSalir);
@@ -163,6 +174,7 @@ namespace TPFinal_Heladeria_Froddo
             this.Load += new System.EventHandler(this.Stock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Stock)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,5 +187,6 @@ namespace TPFinal_Heladeria_Froddo
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btn_Volver;
         private System.Windows.Forms.Button btn_Exportar;
+        private System.Windows.Forms.Label label_Stock;
     }
 }

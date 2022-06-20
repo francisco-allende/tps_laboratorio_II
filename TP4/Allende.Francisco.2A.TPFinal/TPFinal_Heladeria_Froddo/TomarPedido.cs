@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
@@ -149,24 +150,26 @@ namespace TPFinal_Heladeria_Froddo
         }
 
         #endregion
-        
+
         #region IExport
         /// <summary>
         /// Guarda las facturas de las ventas en un txt
         /// </summary>
-        public void SaveAndExport()
+        public async void SaveAndExport()
         {
-            this.ventas.ListaVentas = VentasDAO.Leer();
+            label_Factura.Text = "Aguarde...";
+            this.ventas.ListaVentas = await GestionarArchivos.CargarYOrdenarVentas();
+            label_Factura.Text = "Factura";
 
             if (this.ventas.ListaVentas != null)
             {
-                Serializador.SerializarXML("Lista_Ventas.xml", this.ventas.ListaVentas);
+                Serializador.SerializadorJson("Lista_Ventas.json", this.ventas.ListaVentas);
 
                 List<Pedido> factura = new List<Pedido>();
 
                 foreach (Pedido item in this.ventas.ListaVentas)
                 {
-                    if(this.pedido.Dni == item.Dni)
+                    if (this.pedido.Dni == item.Dni)
                     {
                         factura.Add(item);
                     }
@@ -271,7 +274,7 @@ namespace TPFinal_Heladeria_Froddo
         {
             this.SaveAndExport();
             this.PrintFactura();
-            MessageBox.Show("Venta realizada con exito!\nFactura imprimiendose\nPresione Aceptar para comenzar de nuevo y tomar un nuevo pedido");
+            MessageBox.Show("Venta realizada y guardada con exito!");
 
             //Vacio todo y vuelvo a comenzar
             listBox_Factura.Items.Clear();
@@ -280,20 +283,26 @@ namespace TPFinal_Heladeria_Froddo
 
         /// <summary>
         /// Imprime en el list box los datos de la facturacion y calcula el total
+        /// Simula el tiempo de impresion
         /// </summary>
-        private void PrintFactura()
+        private async void PrintFactura()
         {
             double total = 0;
+            label_Factura.Text = "Imprimiendo...";
 
-            foreach (Pedido item in this.ventas.ListaVentas)
+            await Task.Run(() =>
             {
-                if (item.Dni == this.pedido.Dni)
+                foreach (Pedido item in this.ventas.ListaVentas)
                 {
-                    listBox_Factura.Items.Add(item.ToString());
-                    total += item.Precio;
+                    if (item.Dni == this.pedido.Dni)
+                    {
+                        //Thread.Sleep(3000);
+                        listBox_Factura.Items.Add(item.ToString());
+                        total += item.Precio;
+                    }
                 }
-            }
-
+            });
+            label_Factura.Text = "Factura";
             textBox_Total.Text = total.ToString();
         }
 
