@@ -4,6 +4,7 @@ Francisco Allende Division 2A turno mañana 2022
 ## Correcciones TPS
 
 **TP1 y TP4 aprobados, solo recupero TP2 y TP3**
+**En la carpeta Recuperatorio-fecha-finales** se encuentran los tps a recuperar. Las carpetas que se llaman "recuperatorio" tambien poseen estos trabajos, las dejo por las dudas que conste que estaban subidos y rehechos con anterioridad.
 
 
 ### Mis correcciones en el TP2 son:
