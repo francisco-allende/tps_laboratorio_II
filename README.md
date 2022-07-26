@@ -23,10 +23,12 @@ taller -= c1;
 taller -= new Ciclomotor(Vehiculo.EMarca.HarleyDavidson, "LEM666", ConsoleColor.Red);
 No sobreescribir Equals ni nada que no se pida
 
+TODAS LAS CORRECCIONES SE ENCUENTRAS APLICADAS EN EL TP2
+
 
 ### Mis correcciones TP3:
 
-Gestión de heladeria - Form1.cs? A esta altura?
+Gestión de heladeria - no puede llamarse Form1.cs
 Hay 2 tests que rompen.
 La nomenclatura de las excepciones es ItemNoSeleccionadoException, también podrías ponerle un
 mensaje personalizado.
@@ -35,3 +37,5 @@ un uso diferente.
 Es un poco engorroso que en cada paso de tomar un pedido haya que confirmar todo, pensá que si
 es alguien que atiende al público y necesita hacer muchos pasos para hacer una venta es probable
 que genere demoras, no es muy ágil. Buscale la vuelta a esa parte
+
+TODAS LAS CORRECCIONES SE ENCUENTRAS APLICADAS EN EL TP3
