@@ -1,0 +1,73 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "TPFinal_Heladeria_Froddo/1.0.0": {
+        "dependencies": {
+          "Biblio_Excepciones": "1.0.0",
+          "Biblio_Interfaces": "1.0.0",
+          "DAO_y_Archivos": "1.0.0",
+          "Entidades": "1.0.0"
+        },
+        "runtime": {
+          "TPFinal_Heladeria_Froddo.dll": {}
+        }
+      },
+      "Biblio_Excepciones/1.0.0": {
+        "runtime": {
+          "Biblio_Excepciones.dll": {}
+        }
+      },
+      "Biblio_Interfaces/1.0.0": {
+        "runtime": {
+          "Biblio_Interfaces.dll": {}
+        }
+      },
+      "DAO_y_Archivos/1.0.0": {
+        "runtime": {
+          "DAO_y_Archivos.dll": {}
+        }
+      },
+      "Entidades/1.0.0": {
+        "dependencies": {
+          "Biblio_Excepciones": "1.0.0",
+          "Biblio_Interfaces": "1.0.0"
+        },
+        "runtime": {
+          "Entidades.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TPFinal_Heladeria_Froddo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Biblio_Excepciones/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Biblio_Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DAO_y_Archivos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Entidades/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
