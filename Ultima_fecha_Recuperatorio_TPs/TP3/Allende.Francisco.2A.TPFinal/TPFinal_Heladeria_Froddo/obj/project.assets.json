@@ -85,11 +85,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\TPFinal_Heladeria_Froddo\\TPFinal_Heladeria_Froddo.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\TPFinal_Heladeria_Froddo\\TPFinal_Heladeria_Froddo.csproj",
       "projectName": "TPFinal_Heladeria_Froddo",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\TPFinal_Heladeria_Froddo\\TPFinal_Heladeria_Froddo.csproj",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\TPFinal_Heladeria_Froddo\\TPFinal_Heladeria_Froddo.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\TPFinal_Heladeria_Froddo\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\TPFinal_Heladeria_Froddo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -110,17 +110,17 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj"
+            "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Excepciones\\Biblio_Excepciones.csproj"
             },
-            "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj"
+            "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj"
             },
-            "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\DAO_y_Archivos\\DAO_y_Archivos.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\DAO_y_Archivos\\DAO_y_Archivos.csproj"
+            "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\DAO_y_Archivos\\DAO_y_Archivos.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\DAO_y_Archivos\\DAO_y_Archivos.csproj"
             },
-            "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Entidades\\Entidades.csproj"
             }
           }
         }

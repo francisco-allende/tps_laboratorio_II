@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj",
         "projectName": "Biblio_Interfaces",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\Biblio_Interfaces.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Biblio_Interfaces\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

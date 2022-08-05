@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LgoxDwkDrY/R3pklcPi/oPuee5ULmAO8Lp09JQoxkOOS7UOwY5eXh6FZing9pb4A6y7ep76oYzT2M6BhSuBt/w==",
+  "dgSpecHash": "OER9aGVH+GPDDJHeP5ERiLJeo3z8pA9L+Eii/0skVR/7pJ7ha2GxwJxWbJ5QI/fOvGCjtvkZkg6z15yXTAGLdg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\TPFinal_Heladeria_Froddo\\TPFinal_Heladeria_Froddo.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\TPFinal_Heladeria_Froddo\\TPFinal_Heladeria_Froddo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
   ],

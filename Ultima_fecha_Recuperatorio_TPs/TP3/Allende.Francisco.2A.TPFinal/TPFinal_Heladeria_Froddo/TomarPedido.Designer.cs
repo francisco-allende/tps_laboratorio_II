@@ -50,7 +50,7 @@ namespace TPFinal_Heladeria_Froddo
             this.listBox_Factura = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label_total = new System.Windows.Forms.Label();
-            this.textBox_Total = new System.Windows.Forms.TextBox();
+            this.labelPrecioTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Pedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -247,20 +247,21 @@ namespace TPFinal_Heladeria_Froddo
             // 
             this.label_total.AutoSize = true;
             this.label_total.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_total.Location = new System.Drawing.Point(709, 366);
+            this.label_total.Location = new System.Drawing.Point(687, 366);
             this.label_total.Name = "label_total";
             this.label_total.Size = new System.Drawing.Size(81, 41);
             this.label_total.TabIndex = 41;
             this.label_total.Text = "Total";
             // 
-            // textBox_Total
+            // labelPrecioTotal
             // 
-            this.textBox_Total.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_Total.Location = new System.Drawing.Point(796, 379);
-            this.textBox_Total.Name = "textBox_Total";
-            this.textBox_Total.ReadOnly = true;
-            this.textBox_Total.Size = new System.Drawing.Size(131, 29);
-            this.textBox_Total.TabIndex = 7;
+            this.labelPrecioTotal.AutoSize = true;
+            this.labelPrecioTotal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPrecioTotal.Location = new System.Drawing.Point(829, 375);
+            this.labelPrecioTotal.Name = "labelPrecioTotal";
+            this.labelPrecioTotal.Size = new System.Drawing.Size(25, 30);
+            this.labelPrecioTotal.TabIndex = 42;
+            this.labelPrecioTotal.Text = "0";
             // 
             // TomarPedido
             // 
@@ -268,7 +269,7 @@ namespace TPFinal_Heladeria_Froddo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(939, 551);
-            this.Controls.Add(this.textBox_Total);
+            this.Controls.Add(this.labelPrecioTotal);
             this.Controls.Add(this.label_total);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.listBox_Factura);
@@ -309,6 +310,6 @@ namespace TPFinal_Heladeria_Froddo
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.Label label_total;
-        private System.Windows.Forms.TextBox textBox_Total;
+        private System.Windows.Forms.Label labelPrecioTotal;
     }
 }

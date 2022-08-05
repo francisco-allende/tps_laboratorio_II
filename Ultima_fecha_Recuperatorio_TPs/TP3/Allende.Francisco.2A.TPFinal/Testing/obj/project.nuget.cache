@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7YCJ+B4N3IWAd7IxR+wfqj2KnFoQNCcKdiD0o83E/bepjOXoKOj/JGWLHn2bctOWlIVGn52sh+lO87NsPBUgQA==",
+  "dgSpecHash": "NZOx3hwC0k7kqQtWQl0pwwdc6tp7zmF8Xcfpd1VHHHlU0Jd1fwziJlennFSiUVJBVJkarE12JiGSwfxwp2sPSA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\Ultima fecha recuperatorio TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Testing\\Testing.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\clonar\\tps_laboratorio_II\\Ultima_fecha_Recuperatorio_TPs\\TP3\\Allende.Francisco.2A.TPFinal\\Testing\\Testing.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

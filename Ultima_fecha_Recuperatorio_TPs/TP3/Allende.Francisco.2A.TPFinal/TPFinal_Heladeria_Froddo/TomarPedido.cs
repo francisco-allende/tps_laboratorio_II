@@ -92,7 +92,7 @@ namespace TPFinal_Heladeria_Froddo
             try
             {
                 this.Cobrar();
-                textBox_Total.Text = String.Empty;
+                labelPrecioTotal.Text = "0";
             }
             catch (Exception ex)
             {
@@ -176,7 +176,7 @@ namespace TPFinal_Heladeria_Froddo
                     dataGrid_Pedidos.Rows[index].Cells["Cantidad"].Value = item.RetornarCantidadEscrito(item.Cantidad);
                     dataGrid_Pedidos.Rows[index].Cells["Direccion"].Value = item.ClienteQuePide.Direccion;
                     dataGrid_Pedidos.Rows[index].Cells["Precio"].Value = item.Precio;
-                    textBox_Total.Text = item.CalcularTotal(this.ventas.ListaVentas, item).ToString();
+                    labelPrecioTotal.Text = item.CalcularTotal(this.ventas.ListaVentas, item).ToString();
 
                     index++;
                 }

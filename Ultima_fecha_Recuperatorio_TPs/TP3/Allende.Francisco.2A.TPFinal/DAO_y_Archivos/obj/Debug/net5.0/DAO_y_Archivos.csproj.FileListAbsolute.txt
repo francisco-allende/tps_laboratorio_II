@@ -22,3 +22,15 @@ C:\Users\Usuario\Desktop\Ultima fecha recuperatorio TPs\TP3\Allende.Francisco.2A
 C:\Users\Usuario\Desktop\Ultima fecha recuperatorio TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\obj\Debug\net5.0\DAO_y_Archivos.dll
 C:\Users\Usuario\Desktop\Ultima fecha recuperatorio TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\obj\Debug\net5.0\ref\DAO_y_Archivos.dll
 C:\Users\Usuario\Desktop\Ultima fecha recuperatorio TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\obj\Debug\net5.0\DAO_y_Archivos.pdb
+C:\Users\Usuario\Desktop\clonar\tps_laboratorio_II\Ultima_fecha_Recuperatorio_TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\bin\Debug\net5.0\DAO_y_Archivos.deps.json
+C:\Users\Usuario\Desktop\clonar\tps_laboratorio_II\Ultima_fecha_Recuperatorio_TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\bin\Debug\net5.0\DAO_y_Archivos.dll
+C:\Users\Usuario\Desktop\clonar\tps_laboratorio_II\Ultima_fecha_Recuperatorio_TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\bin\Debug\net5.0\ref\DAO_y_Archivos.dll
+C:\Users\Usuario\Desktop\clonar\tps_laboratorio_II\Ultima_fecha_Recuperatorio_TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\bin\Debug\net5.0\DAO_y_Archivos.pdb
+C:\Users\Usuario\Desktop\clonar\tps_laboratorio_II\Ultima_fecha_Recuperatorio_TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\obj\Debug\net5.0\DAO_y_Archivos.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\clonar\tps_laboratorio_II\Ultima_fecha_Recuperatorio_TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\obj\Debug\net5.0\DAO_y_Archivos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\clonar\tps_laboratorio_II\Ultima_fecha_Recuperatorio_TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\obj\Debug\net5.0\DAO_y_Archivos.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\clonar\tps_laboratorio_II\Ultima_fecha_Recuperatorio_TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\obj\Debug\net5.0\DAO_y_Archivos.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\clonar\tps_laboratorio_II\Ultima_fecha_Recuperatorio_TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\obj\Debug\net5.0\DAO_y_Archivos.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\clonar\tps_laboratorio_II\Ultima_fecha_Recuperatorio_TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\obj\Debug\net5.0\DAO_y_Archivos.dll
+C:\Users\Usuario\Desktop\clonar\tps_laboratorio_II\Ultima_fecha_Recuperatorio_TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\obj\Debug\net5.0\ref\DAO_y_Archivos.dll
+C:\Users\Usuario\Desktop\clonar\tps_laboratorio_II\Ultima_fecha_Recuperatorio_TPs\TP3\Allende.Francisco.2A.TPFinal\DAO_y_Archivos\obj\Debug\net5.0\DAO_y_Archivos.pdb
